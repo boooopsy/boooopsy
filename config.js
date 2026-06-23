@@ -6,4 +6,4 @@ const CONFIG = {
     ADMIN_GITHUB_HANDLE: 'boooopsy' // Only this user gets Admin rights
 };
 
-const supabase = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
+const supabaseClient = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);

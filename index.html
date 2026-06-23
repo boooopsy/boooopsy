@@ -9,7 +9,12 @@
 </head>
 <body>
     <header class="top-nav">
-        <h1>The Daily Thread</h1>
+        <div class="header-left">
+            <h1>The Daily Thread</h1>
+            <nav class="breadcrumbs">
+                <a href="#">Home</a> &raquo; <span>Feed</span>
+            </nav>
+        </div>
         <div id="auth-section" class="auth-group">
             <button id="theme-toggle" class="icon-btn">🌙</button>
             <button id="login-x-btn" class="auth-btn x-btn">Login with X</button>
@@ -17,6 +22,28 @@
             <button id="logout-btn" class="auth-btn hidden">Logout</button>
         </div>
     </header>
+    
+    <div class="search-bar-container">
+        <div class="search-controls">
+            <input type="text" id="tag-search-input" placeholder="Search for tag (e.g., 'updates')...">
+            <button onclick="handleSearch()" class="search-btn">Search</button>
+        </div>
+        <div class="view-controls">
+            <span class="control-label">View:</span>
+            <button onclick="toggleView('expanded')" class="view-tab active" id="view-exp">Cards</button>
+            <button onclick="toggleView('list')" class="view-tab" id="view-list">List</button>
+        </div>
+    </div>
+    
+    <div class="search-results-line-wrapper">
+        <div id="search-status-line" class="hidden">
+            <span id="results-count-text"></span>
+            <div id="search-nav-buttons" class="hidden">
+                <button onclick="navigateSearchResult(-1)" class="results-nav-btn">&lt;</button>
+                <button onclick="navigateSearchResult(1)" class="results-nav-btn">&gt;</button>
+            </div>
+        </div>
+    </div>
 
     <div class="layout-wrapper">
         <main class="feed-container" id="feed">
@@ -24,38 +51,83 @@
         </main>
 
         <aside class="timeline-container">
-            <div class="timeline-track" id="timeline"></div>
+            <div class="timeline-track" id="timeline">
+                </div>
         </aside>
     </div>
 
     <button id="admin-fab" class="fab hidden">✎</button>
 
     <div id="admin-modal" class="modal hidden">
-        <div class="modal-content">
+        <div class="modal-content admin-panel">
             <div class="modal-header">
                 <div class="tabs">
-                    <button class="tab active" data-target="write-tab">Write Post</button>
+                    <button class="tab active" data-target="write-tab">Write / Edit Post</button>
+                    <button class="tab" data-target="manage-tab">Manage Posts</button>
                     <button class="tab" data-target="review-tab">Review Comments <span id="badge" class="badge hidden">0</span></button>
                 </div>
                 <button id="close-modal" class="icon-btn">✕</button>
             </div>
             
             <div id="write-tab" class="tab-content active">
+                <div class="metadata-inputs">
+                    <input type="text" id="post-title-input" placeholder="Post Title (Optional - first few words picked if empty)">
+                    <input type="text" id="post-tags-input" placeholder="Tags (Separate with commas: updates, features, logs)">
+                </div>
+
                 <div class="editor-toolbar">
                     <button onclick="document.execCommand('bold')"><b>B</b></button>
                     <button onclick="document.execCommand('italic')"><i>I</i></button>
+                    <button onclick="document.execCommand('insertUnorderedList')">Bullet List</button>
                     <button onclick="document.execCommand('formatBlock', false, 'blockquote')">Quote</button>
+                    <button onclick="document.execCommand('formatBlock', false, 'pre')">Code</button>
+                    <button onclick="document.execCommand('removeFormat')">Clear Format</button>
                     <label class="custom-file-upload">
-                        Upload Image
+                        📷 Insert Image
                         <input type="file" id="image-upload" accept="image/*">
                     </label>
                 </div>
+                
+                <div id="image-tools" class="editor-toolbar secondary-toolbar hidden">
+                    <span style="font-size: 0.8rem; color: var(--text-muted); margin-right: 10px;">Image Wrap:</span>
+                    <button onclick="modifySelectedImage('wrap-left')">Left</button>
+                    <button onclick="modifySelectedImage('center')">Center</button>
+                    <button onclick="modifySelectedImage('wrap-right')">Right</button>
+                    <span style="font-size: 0.8rem; color: var(--text-muted); margin: 0 10px;">Size:</span>
+                    <button onclick="modifySelectedImage('shrink')">➖</button>
+                    <button onclick="modifySelectedImage('grow')">➕</button>
+                </div>
+
                 <div id="editor" contenteditable="true" placeholder="Log your thoughts (UTC)..."></div>
-                <button id="publish-btn" class="primary-btn">Bake to Repository</button>
+                
+                <div class="button-group editor-buttons">
+                    <button id="publish-btn" class="primary-btn">Bake to Repository</button>
+                    <button id="cancel-edit-btn" class="secondary-btn hidden" onclick="resetEditor()">Cancel Edit</button>
+                    <button id="delete-post-btn" class="secondary-btn hidden delete-btn">🗑️ Delete</button>
+                </div>
+            </div>
+
+            <div id="manage-tab" class="tab-content hidden">
+                <div id="post-manager-list" class="manager-list">
+                    <p>Loading historical posts...</p>
+                </div>
             </div>
 
             <div id="review-tab" class="tab-content hidden">
-                <div id="pending-queue"></div>
+                <div id="pending-queue">
+                    <p style="color: var(--text-muted)">No pending comments.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="delete-confirm-modal" class="modal hidden" style="z-index: 200;">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <h3 style="margin-top:0;">Delete Post?</h3>
+            <p style="color: var(--text-muted);">Are you sure you want to delete this post? This will also permanently remove any images used inside it from the repository. This cannot be undone.</p>
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                <button id="confirm-delete-yes" class="primary-btn delete-btn">Yes, Delete</button>
+                <button id="confirm-delete-no" class="secondary-btn">No, Cancel</button>
             </div>
         </div>
     </div>

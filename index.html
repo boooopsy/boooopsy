@@ -16,7 +16,13 @@
             </nav>
         </div>
         <div id="auth-section" class="auth-group">
-            <button id="theme-toggle" class="icon-btn">🌙</button>
+            <label class="elastic-switch" title="Toggle Theme">
+                <input type="checkbox" id="theme-toggle-checkbox">
+                <span class="slider">
+                    <svg class="icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </span>
+            </label>
             <button id="login-x-btn" class="auth-btn x-btn">Login with X</button>
             <button id="login-gh-btn" class="auth-btn gh-btn hidden">Admin Login</button>
             <button id="logout-btn" class="auth-btn hidden">Logout</button>
@@ -25,13 +31,17 @@
     
     <div class="search-bar-container">
         <div class="search-controls">
-            <input type="text" id="tag-search-input" placeholder="Search for tag (e.g., 'updates')...">
-            <button onclick="handleSearch()" class="search-btn">Search</button>
+            <input type="text" id="tag-search-input" placeholder="Search tags (e.g. 'updates')...">
         </div>
         <div class="view-controls">
             <span class="control-label">View:</span>
-            <button onclick="toggleView('expanded')" class="view-tab active" id="view-exp">Cards</button>
-            <button onclick="toggleView('list')" class="view-tab" id="view-list">List</button>
+            <label class="elastic-switch view-switch" title="Toggle Cards/List">
+                <input type="checkbox" id="view-toggle-checkbox">
+                <span class="slider">
+                    <svg class="icon cards-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line></svg>
+                    <svg class="icon list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                </span>
+            </label>
         </div>
     </div>
     

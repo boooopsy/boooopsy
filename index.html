@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Thread</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <header class="top-nav">
+        <h1>The Daily Thread</h1>
+        <div id="auth-section" class="auth-group">
+            <button id="theme-toggle" class="icon-btn">🌙</button>
+            <button id="login-x-btn" class="auth-btn x-btn">Login with X</button>
+            <button id="login-gh-btn" class="auth-btn gh-btn hidden">Admin Login</button>
+            <button id="logout-btn" class="auth-btn hidden">Logout</button>
+        </div>
+    </header>
+
+    <div class="layout-wrapper">
+        <main class="feed-container" id="feed">
+            <div id="loading-spinner">Loading logs from UTC...</div>
+        </main>
+
+        <aside class="timeline-container">
+            <div class="timeline-track" id="timeline"></div>
+        </aside>
+    </div>
+
+    <button id="admin-fab" class="fab hidden">✎</button>
+
+    <div id="admin-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="tabs">
+                    <button class="tab active" data-target="write-tab">Write Post</button>
+                    <button class="tab" data-target="review-tab">Review Comments <span id="badge" class="badge hidden">0</span></button>
+                </div>
+                <button id="close-modal" class="icon-btn">✕</button>
+            </div>
+            
+            <div id="write-tab" class="tab-content active">
+                <div class="editor-toolbar">
+                    <button onclick="document.execCommand('bold')"><b>B</b></button>
+                    <button onclick="document.execCommand('italic')"><i>I</i></button>
+                    <button onclick="document.execCommand('formatBlock', false, 'blockquote')">Quote</button>
+                    <label class="custom-file-upload">
+                        Upload Image
+                        <input type="file" id="image-upload" accept="image/*">
+                    </label>
+                </div>
+                <div id="editor" contenteditable="true" placeholder="Log your thoughts (UTC)..."></div>
+                <button id="publish-btn" class="primary-btn">Bake to Repository</button>
+            </div>
+
+            <div id="review-tab" class="tab-content hidden">
+                <div id="pending-queue"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

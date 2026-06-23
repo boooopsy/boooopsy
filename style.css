@@ -1,0 +1,62 @@
+:root {
+    --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --text-muted: #64748b;
+    --accent: #0284c7; --border: #e2e8f0; --radius: 12px;
+}
+[data-theme="dark"] {
+    --bg: #0f172a; --card: #1e293b; --text: #f8fafc; --text-muted: #94a3b8;
+    --accent: #38bdf8; --border: #334155;
+}
+* { box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0 2rem 2rem; transition: background 0.3s, color 0.3s; }
+.hidden { display: none !important; }
+
+/* Nav & Auth */
+.top-nav { display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+.auth-group { display: flex; gap: 1rem; align-items: center; }
+.auth-btn { padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; color: white; }
+.x-btn { background: #000; }
+.gh-btn { background: #24292e; }
+.icon-btn { background: transparent; border: none; font-size: 1.2rem; cursor: pointer; }
+
+/* Layout & Feed */
+.layout-wrapper { display: flex; gap: 3rem; max-width: 800px; margin: 0 auto; }
+.feed-container { flex: 1; display: flex; flex-direction: column; gap: 2rem; }
+.timeline-container { width: 140px; position: sticky; top: 2rem; height: calc(100vh - 4rem); overflow-y: auto; scrollbar-width: none; }
+.timeline-track { border-left: 2px solid var(--border); padding-left: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* Cards & Interactions */
+.blog-card { background: var(--card); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border); scroll-margin-top: 2rem; }
+.blog-meta { font-size: 0.85rem; color: var(--text-muted); font-weight: bold; margin-bottom: 1rem; }
+.blog-content img { width: 100%; border-radius: 8px; margin: 1rem 0; }
+.card-actions { display: flex; gap: 1rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.action-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 5px; position: relative; }
+
+/* Like Hover Tooltip */
+.likers-tooltip { display: none; position: absolute; bottom: 100%; left: 0; background: var(--text); color: var(--bg); padding: 8px; border-radius: 6px; font-size: 0.8rem; white-space: nowrap; z-index: 10; flex-direction: column; gap: 4px;}
+.action-btn:hover .likers-tooltip { display: flex; }
+.likers-tooltip a { color: var(--bg); text-decoration: none; }
+.likers-tooltip a:hover { text-decoration: underline; }
+
+/* Comments Section */
+.comments-section { margin-top: 1rem; background: var(--bg); padding: 1rem; border-radius: 8px; }
+.comment { display: flex; gap: 10px; margin-bottom: 1rem; align-items: flex-start; }
+.comment img { width: 32px; height: 32px; border-radius: 50%; }
+.comment-body { flex: 1; }
+.comment-meta { font-size: 0.8rem; color: var(--text-muted); }
+.comment-meta a { color: var(--accent); font-weight: bold; text-decoration: none; }
+.comment-text { font-size: 0.95rem; margin-top: 4px; }
+.expand-comments { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 0.9rem; padding: 0; }
+.comment-hidden { display: none; }
+.expanded .comment-hidden { display: flex; }
+
+/* Admin Modal */
+.fab { position: fixed; bottom: 2rem; right: 2rem; width: 60px; height: 60px; border-radius: 50%; background: var(--accent); color: white; font-size: 24px; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; z-index: 100; backdrop-filter: blur(4px); }
+.modal-content { background: var(--card); width: 90%; max-width: 700px; padding: 2rem; border-radius: var(--radius); max-height: 90vh; overflow-y: auto; }
+.tabs { display: flex; gap: 1rem; }
+.tab { background: none; border: none; font-size: 1.1rem; color: var(--text-muted); cursor: pointer; padding-bottom: 5px; }
+.tab.active { color: var(--text); border-bottom: 2px solid var(--accent); font-weight: bold; }
+.badge { background: red; color: white; font-size: 0.7rem; padding: 2px 6px; border-radius: 10px; vertical-align: super; }
+#editor { min-height: 250px; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; outline: none; }
+.primary-btn { width: 100%; padding: 12px; background: var(--accent); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.queue-item { border: 1px solid var(--border); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; }

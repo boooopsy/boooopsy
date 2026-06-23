@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title>Archive Synthetic Illustration</title>
+  <desc>Abstract synthetic illustration for blog testing.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3f3f46"/>
+      <stop offset="55%" stop-color="#a1a1aa"/>
+      <stop offset="100%" stop-color="#f4f4f5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="215" cy="180" r="110" fill="rgba(255,255,255,0.18)"/>
+  <circle cx="970" cy="170" r="140" fill="rgba(255,255,255,0.12)"/>
+  <path d="M0 620 C180 500 300 520 450 610 S790 760 1200 560 L1200 800 L0 800 Z" fill="rgba(255,255,255,0.16)"/>
+  <path d="M0 680 C220 560 340 600 520 690 S860 780 1200 620 L1200 800 L0 800 Z" fill="rgba(15,23,42,0.12)"/>
+  <rect x="86" y="86" width="260" height="150" rx="20" fill="rgba(15,23,42,0.18)"/>
+  <text x="116" y="158" font-family="Georgia, serif" font-size="46" fill="#ffffff">Archive</text>
+  <text x="116" y="204" font-family="Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.85)">Synthetic blog fixture image</text>
+</svg>

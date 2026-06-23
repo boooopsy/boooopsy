@@ -16,28 +16,18 @@ let isAdmin = false;
 let githubPAT = sessionStorage.getItem('github_pat');
 let loadedPosts = [];
 
+function showFeedMessage(message) {
+    const feed = document.getElementById('feed');
+    const loadingSpinner = document.getElementById('loading-spinner');
+
+    if (loadingSpinner) loadingSpinner.classList.add('hidden');
+    feed.insertAdjacentHTML('beforeend', `<p class="feed-message">${message}</p>`);
+}
+
 // ====== AUTHENTICATION ======
 document.addEventListener('DOMContentLoaded', async () => {
     // Reveal Admin Login Shortcut (Ctrl+Shift+A)
     document.addEventListener('keydown', (e) => { if (e.ctrlKey && e.shiftKey && e.key === 'A') document.getElementById('login-gh-btn').classList.remove('hidden'); });
-
-    const { data: { session } } = await supabase.auth.getSession();
-    currentUser = session?.user;
-
-    if (currentUser) {
-        document.getElementById('logout-btn').classList.remove('hidden');
-        document.getElementById('login-x-btn').classList.add('hidden');
-        
-        if (currentUser.app_metadata.provider === 'github' && currentUser.user_metadata.user_name === CONFIG.ADMIN_GITHUB_HANDLE) {
-            isAdmin = true;
-            document.getElementById('admin-fab').classList.remove('hidden');
-            if (!githubPAT) {
-                githubPAT = prompt("ADMIN: Enter your GitHub Personal Access Token (PAT) for Repo Write Access:");
-                sessionStorage.setItem('github_pat', githubPAT);
-            }
-            fetchPendingComments();
-        }
-    }
 
     // Auth Listeners
     document.getElementById('login-x-btn').addEventListener('click', () => supabase.auth.signInWithOAuth({ provider: 'twitter' }));
@@ -52,7 +42,29 @@ document.addEventListener('DOMContentLoaded', async () => {
         else { document.body.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark'); themeBtn.textContent = '☀️'; }
     });
 
-    loadFeed();
+    try {
+        const { data: { session } } = await supabase.auth.getSession();
+        currentUser = session?.user;
+
+        if (currentUser) {
+            document.getElementById('logout-btn').classList.remove('hidden');
+            document.getElementById('login-x-btn').classList.add('hidden');
+
+            if (currentUser.app_metadata.provider === 'github' && currentUser.user_metadata.user_name === CONFIG.ADMIN_GITHUB_HANDLE) {
+                isAdmin = true;
+                document.getElementById('admin-fab').classList.remove('hidden');
+                if (!githubPAT) {
+                    githubPAT = prompt("ADMIN: Enter your GitHub Personal Access Token (PAT) for Repo Write Access:");
+                    if (githubPAT) sessionStorage.setItem('github_pat', githubPAT);
+                }
+                fetchPendingComments();
+            }
+        }
+    } catch (error) {
+        console.error('Supabase auth failed:', error);
+    } finally {
+        loadFeed();
+    }
 });
 
 // ====== GITHUB API INTERFACE ======
@@ -79,81 +91,96 @@ async function fetchFromGitHub(filePath) {
 
 // ====== CONTENT GENERATION & FEED ======
 async function loadFeed() {
-    // In a real static site, you'd fetch an index.json manifest. For this client-side CMS, we fetch the repo tree.
-    const res = await fetch(`https://api.github.com/repos/${CONFIG.GITHUB_OWNER}/${CONFIG.GITHUB_REPO}/contents/posts`);
-    document.getElementById('loading-spinner').classList.add('hidden');
-    
-    if (!res.ok) return console.log("No posts folder found yet.");
-    const files = await res.json();
-    
-    // Sort descending by name (postDDMMYYYYHHMM)
-    files.sort((a, b) => b.name.localeCompare(a.name));
+    try {
+        // In a real static site, you'd fetch an index.json manifest. For this client-side CMS, we fetch the repo tree.
+        const res = await fetch(`https://api.github.com/repos/${CONFIG.GITHUB_OWNER}/${CONFIG.GITHUB_REPO}/contents/posts`);
+        document.getElementById('loading-spinner').classList.add('hidden');
 
-    // Fetch active temp likes from Supabase
-    const { data: tempLikes } = await supabase.from('temp_likes').select('post_id, user_handle');
-
-    const feed = document.getElementById('feed');
-    
-    for (const file of files) {
-        if (!file.name.endsWith('.json')) continue;
-        
-        const rawRes = await fetch(file.download_url);
-        const post = await rawRes.json();
-        loadedPosts.push({ sha: file.sha, path: file.path, ...post }); // Keep ref for editing
-
-        // Merge baked likes + temp likes
-        const postTempLikes = tempLikes ? tempLikes.filter(l => l.post_id === post.id).map(l => l.user_handle) : [];
-        const allLikes = [...new Set([...post.likes, ...postTempLikes])];
-
-        const card = document.createElement('article');
-        card.className = 'blog-card';
-        card.id = post.id;
-        
-        // Generate Likers Tooltip
-        let likersHTML = allLikes.length > 0 
-            ? `<div class="likers-tooltip">` + allLikes.map(h => `<a href="https://x.com/${h}" target="_blank">@${h}</a>`).join('') + `</div>` 
-            : '';
-
-        // Generate Comments
-        let commentsHTML = '';
-        if (post.comments && post.comments.length > 0) {
-            commentsHTML = `<div class="comments-section" id="comments-${post.id}">`;
-            post.comments.forEach((c, index) => {
-                const hiddenClass = index > 0 ? 'comment-hidden' : '';
-                commentsHTML += `
-                    <div class="comment ${hiddenClass}">
-                        <img src="${c.user_avatar || 'https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png'}" />
-                        <div class="comment-body">
-                            <div class="comment-meta"><a href="https://x.com/${c.user_handle}" target="_blank">@${c.user_handle}</a> &bull; ${formatDisplayDate(c.timestamp)}</div>
-                            <div class="comment-text">${c.text}</div>
-                        </div>
-                    </div>`;
-            });
-            if (post.comments.length > 1) {
-                commentsHTML += `<button class="expand-comments" onclick="document.getElementById('comments-${post.id}').classList.toggle('expanded')">Read ${post.comments.length - 1} more comments...</button>`;
-            }
-            commentsHTML += `</div>`;
+        if (!res.ok) {
+            showFeedMessage("No posts folder was found yet. Create /posts in your GitHub repo, then publish your first post from admin mode.");
+            return;
         }
 
-        // Add logic for users to leave a comment
-        const commentInputHTML = currentUser && currentUser.app_metadata.provider === 'twitter' 
-            ? `<div style="margin-top:1rem; display:flex; gap:10px;">
-                <input type="text" id="input-${post.id}" placeholder="Write a reply..." style="flex:1; padding:8px; border-radius:6px; border:1px solid var(--border);">
-                <button onclick="submitTempComment('${post.id}')" class="auth-btn x-btn">Reply</button>
-               </div>` 
-            : `<p style="font-size:0.8rem; color:var(--text-muted);">Log in with X to comment.</p>`;
+        const files = await res.json();
 
-        card.innerHTML = `
-            <div class="blog-meta">${formatDisplayDate(post.timestamp)}</div>
-            <div class="blog-content">${post.content}</div>
-            <div class="card-actions">
-                <button class="action-btn" onclick="toggleLike('${post.id}')">❤️ ${allLikes.length} ${likersHTML}</button>
-                <button class="action-btn" onclick="sharePost('${post.id}')">🔗 Share</button>
-            </div>
-            ${commentsHTML}
-            ${commentInputHTML}
-        `;
-        feed.appendChild(card);
+        // Sort descending by name (postDDMMYYYYHHMM)
+        files.sort((a, b) => b.name.localeCompare(a.name));
+
+        // Fetch active temp likes from Supabase
+        const { data: tempLikes } = await supabase.from('temp_likes').select('post_id, user_handle');
+
+        const feed = document.getElementById('feed');
+        let renderedPosts = 0;
+
+        for (const file of files) {
+            if (!file.name.endsWith('.json')) continue;
+
+            const rawRes = await fetch(file.download_url);
+            const post = await rawRes.json();
+            loadedPosts.push({ sha: file.sha, path: file.path, ...post }); // Keep ref for editing
+
+            // Merge baked likes + temp likes
+            const postTempLikes = tempLikes ? tempLikes.filter(l => l.post_id === post.id).map(l => l.user_handle) : [];
+            const allLikes = [...new Set([...(post.likes || []), ...postTempLikes])];
+
+            const card = document.createElement('article');
+            card.className = 'blog-card';
+            card.id = post.id;
+
+            // Generate Likers Tooltip
+            let likersHTML = allLikes.length > 0
+                ? `<div class="likers-tooltip">` + allLikes.map(h => `<a href="https://x.com/${h}" target="_blank">@${h}</a>`).join('') + `</div>`
+                : '';
+
+            // Generate Comments
+            let commentsHTML = '';
+            if (post.comments && post.comments.length > 0) {
+                commentsHTML = `<div class="comments-section" id="comments-${post.id}">`;
+                post.comments.forEach((c, index) => {
+                    const hiddenClass = index > 0 ? 'comment-hidden' : '';
+                    commentsHTML += `
+                        <div class="comment ${hiddenClass}">
+                            <img src="${c.user_avatar || 'https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png'}" />
+                            <div class="comment-body">
+                                <div class="comment-meta"><a href="https://x.com/${c.user_handle}" target="_blank">@${c.user_handle}</a> &bull; ${formatDisplayDate(c.timestamp)}</div>
+                                <div class="comment-text">${c.text}</div>
+                            </div>
+                        </div>`;
+                });
+                if (post.comments.length > 1) {
+                    commentsHTML += `<button class="expand-comments" onclick="document.getElementById('comments-${post.id}').classList.toggle('expanded')">Read ${post.comments.length - 1} more comments...</button>`;
+                }
+                commentsHTML += `</div>`;
+            }
+
+            // Add logic for users to leave a comment
+            const commentInputHTML = currentUser && currentUser.app_metadata.provider === 'twitter'
+                ? `<div style="margin-top:1rem; display:flex; gap:10px;">
+                    <input type="text" id="input-${post.id}" placeholder="Write a reply..." style="flex:1; padding:8px; border-radius:6px; border:1px solid var(--border);">
+                    <button onclick="submitTempComment('${post.id}')" class="auth-btn x-btn">Reply</button>
+                   </div>`
+                : `<p style="font-size:0.8rem; color:var(--text-muted);">Log in with X to comment.</p>`;
+
+            card.innerHTML = `
+                <div class="blog-meta">${formatDisplayDate(post.timestamp)}</div>
+                <div class="blog-content">${post.content}</div>
+                <div class="card-actions">
+                    <button class="action-btn" onclick="toggleLike('${post.id}')">❤️ ${allLikes.length} ${likersHTML}</button>
+                    <button class="action-btn" onclick="sharePost('${post.id}')">🔗 Share</button>
+                </div>
+                ${commentsHTML}
+                ${commentInputHTML}
+            `;
+            feed.appendChild(card);
+            renderedPosts++;
+        }
+
+        if (renderedPosts === 0) {
+            showFeedMessage("No posts yet. Use admin mode to bake your first post to the repository.");
+        }
+    } catch (error) {
+        console.error('Feed loading failed:', error);
+        showFeedMessage("The feed could not be loaded. Check your GitHub repo name, /posts folder, and browser console.");
     }
 }
 

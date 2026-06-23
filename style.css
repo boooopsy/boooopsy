@@ -26,6 +26,7 @@ body { font-family: system-ui, sans-serif; background: var(--bg); color: var(--t
 
 /* Cards & Interactions */
 .blog-card { background: var(--card); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border); scroll-margin-top: 2rem; }
+.feed-message { background: var(--card); border: 1px solid var(--border); border-radius: 8px; color: var(--text-muted); margin: 0; padding: 1rem; }
 .blog-meta { font-size: 0.85rem; color: var(--text-muted); font-weight: bold; margin-bottom: 1rem; }
 .blog-content img { width: 100%; border-radius: 8px; margin: 1rem 0; }
 .card-actions { display: flex; gap: 1rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }

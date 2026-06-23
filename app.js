@@ -24,14 +24,82 @@ function showFeedMessage(message) {
     feed.insertAdjacentHTML('beforeend', `<p class="feed-message">${message}</p>`);
 }
 
+function getUserProvider(user) {
+    return user?.app_metadata?.provider;
+}
+
+function getUserHandle(user) {
+    return user?.user_metadata?.user_name
+        || user?.user_metadata?.preferred_username
+        || user?.user_metadata?.nickname
+        || user?.user_metadata?.name
+        || '';
+}
+
+async function signInWithProvider(provider) {
+    const { error } = await supabase.auth.signInWithOAuth({
+        provider,
+        options: {
+            redirectTo: window.location.href.split('#')[0]
+        }
+    });
+
+    if (error) {
+        console.error(`${provider} login failed:`, error);
+        alert(`${provider} login failed: ${error.message}`);
+    }
+}
+
+async function unlockAdminWithToken(token) {
+    if (!token) return false;
+
+    try {
+        const res = await fetch('https://api.github.com/user', {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/vnd.github+json'
+            }
+        });
+
+        if (!res.ok) {
+            alert("That GitHub token could not be verified. Check that it has not expired.");
+            return false;
+        }
+
+        const profile = await res.json();
+        if (profile.login.toLowerCase() !== CONFIG.ADMIN_GITHUB_HANDLE.toLowerCase()) {
+            alert(`This token belongs to "${profile.login}", but admin is configured for "${CONFIG.ADMIN_GITHUB_HANDLE}".`);
+            return false;
+        }
+
+        githubPAT = token;
+        sessionStorage.setItem('github_pat', token);
+        isAdmin = true;
+        document.getElementById('admin-fab').classList.remove('hidden');
+        await fetchPendingComments();
+        return true;
+    } catch (error) {
+        console.error('GitHub token verification failed:', error);
+        alert("Could not verify the GitHub token. Check your connection and try again.");
+        return false;
+    }
+}
+
 // ====== AUTHENTICATION ======
 document.addEventListener('DOMContentLoaded', async () => {
     // Reveal Admin Login Shortcut (Ctrl+Shift+A)
-    document.addEventListener('keydown', (e) => { if (e.ctrlKey && e.shiftKey && e.key === 'A') document.getElementById('login-gh-btn').classList.remove('hidden'); });
+    document.addEventListener('keydown', async (e) => {
+        if (!e.ctrlKey || !e.shiftKey || e.key.toLowerCase() !== 'a') return;
+
+        e.preventDefault();
+        const token = githubPAT || prompt("ADMIN: Enter your GitHub Personal Access Token (PAT) for Repo Write Access:");
+        const unlocked = await unlockAdminWithToken(token);
+        if (unlocked) adminModal?.classList.remove('hidden');
+    });
 
     // Auth Listeners
-    document.getElementById('login-x-btn').addEventListener('click', () => supabase.auth.signInWithOAuth({ provider: 'twitter' }));
-    document.getElementById('login-gh-btn').addEventListener('click', () => supabase.auth.signInWithOAuth({ provider: 'github' }));
+    document.getElementById('login-x-btn').addEventListener('click', () => signInWithProvider('twitter'));
+    document.getElementById('login-gh-btn').addEventListener('click', () => signInWithProvider('github'));
     document.getElementById('logout-btn').addEventListener('click', async () => { await supabase.auth.signOut(); sessionStorage.removeItem('github_pat'); window.location.reload(); });
     
     // Theme logic
@@ -50,14 +118,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('logout-btn').classList.remove('hidden');
             document.getElementById('login-x-btn').classList.add('hidden');
 
-            if (currentUser.app_metadata.provider === 'github' && currentUser.user_metadata.user_name === CONFIG.ADMIN_GITHUB_HANDLE) {
-                isAdmin = true;
-                document.getElementById('admin-fab').classList.remove('hidden');
-                if (!githubPAT) {
-                    githubPAT = prompt("ADMIN: Enter your GitHub Personal Access Token (PAT) for Repo Write Access:");
-                    if (githubPAT) sessionStorage.setItem('github_pat', githubPAT);
-                }
-                fetchPendingComments();
+            const provider = getUserProvider(currentUser);
+            const handle = getUserHandle(currentUser);
+
+            if (provider === 'github' && handle.toLowerCase() === CONFIG.ADMIN_GITHUB_HANDLE.toLowerCase()) {
+                if (githubPAT) await unlockAdminWithToken(githubPAT);
+            } else if (provider === 'github') {
+                alert(`GitHub login succeeded as "${handle}", but admin is configured for "${CONFIG.ADMIN_GITHUB_HANDLE}".`);
             }
         }
     } catch (error) {
@@ -154,7 +221,7 @@ async function loadFeed() {
             }
 
             // Add logic for users to leave a comment
-            const commentInputHTML = currentUser && currentUser.app_metadata.provider === 'twitter'
+            const commentInputHTML = currentUser && getUserProvider(currentUser) === 'twitter'
                 ? `<div style="margin-top:1rem; display:flex; gap:10px;">
                     <input type="text" id="input-${post.id}" placeholder="Write a reply..." style="flex:1; padding:8px; border-radius:6px; border:1px solid var(--border);">
                     <button onclick="submitTempComment('${post.id}')" class="auth-btn x-btn">Reply</button>
@@ -186,8 +253,8 @@ async function loadFeed() {
 
 // ====== USER INTERACTIONS ======
 async function toggleLike(postId) {
-    if (!currentUser || currentUser.app_metadata.provider !== 'twitter') return alert("Please log in with X to like posts.");
-    const handle = currentUser.user_metadata.user_name;
+    if (!currentUser || getUserProvider(currentUser) !== 'twitter') return alert("Please log in with X to like posts.");
+    const handle = getUserHandle(currentUser);
     
     // We only write to Supabase. Baking happens later.
     await supabase.from('temp_likes').insert([{ post_id: postId, user_handle: handle }]);
@@ -200,7 +267,7 @@ async function submitTempComment(postId) {
     
     await supabase.from('temp_comments').insert([{
         post_id: postId,
-        user_handle: currentUser.user_metadata.user_name,
+        user_handle: getUserHandle(currentUser),
         user_avatar: currentUser.user_metadata.avatar_url,
         comment_text: text,
         created_at: new Date().toISOString()
@@ -218,7 +285,19 @@ function sharePost(id) {
 
 // ====== ADMIN CMS CONTROLS ======
 const adminModal = document.getElementById('admin-modal');
-document.getElementById('admin-fab')?.addEventListener('click', () => adminModal.classList.remove('hidden'));
+document.getElementById('admin-fab')?.addEventListener('click', () => {
+    if (!isAdmin) {
+        alert("Admin mode is locked. Press Ctrl+Shift+A and enter your GitHub token.");
+        return;
+    }
+
+    if (!adminModal) {
+        alert("Admin modal was not found on this page.");
+        return;
+    }
+
+    adminModal.classList.remove('hidden');
+});
 document.getElementById('close-modal')?.addEventListener('click', () => adminModal.classList.add('hidden'));
 
 // Modal Tabs

@@ -29,17 +29,20 @@ input[type="text"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px va
 .primary-btn:hover { background: #0369a1; }
 .secondary-btn { background: var(--card); color: var(--text); border: 1px solid var(--border); flex: 1; }
 .auth-btn:hover { opacity: 0.8; }
-.x-btn { background: #000; color: white; padding: 8px 16px; }
-.gh-btn { background: #24292e; color: white; padding: 8px 16px;}
 .primary-btn.delete-btn, .secondary-btn.delete-btn { color: white; background: #ef4444; border-color: #ef4444; }
 
-/* Header */
-.top-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: 0 auto; padding: 2rem 0; }
+/* Header and Top Navigation Group */
+.top-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: 0 auto; padding: 2rem 0; gap: 2rem; }
 .header-left h1 { margin: 0 0 5px 0; font-size: 1.8rem; }
 .breadcrumbs { font-size: 0.85rem; color: var(--text-muted); }
 .breadcrumbs a { color: var(--accent); text-decoration: none; font-weight: 500; }
 .breadcrumbs a:hover { text-decoration: underline; }
-.auth-group { display: flex; gap: 1rem; align-items: center; }
+
+/* Integrated Header Control Architecture */
+.auth-group { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
+.search-controls { display: none !important; /* Temporarily hidden per user request */ }
+.view-controls { display: flex; gap: 8px; align-items: center; margin-left: auto; } 
+.control-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; white-space: nowrap; }
 
 /* Toggles */
 .elastic-switch { position: relative; display: inline-block; width: 64px; height: 32px; flex-shrink: 0;}
@@ -58,12 +61,7 @@ input[type="text"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px va
 #view-toggle-checkbox:checked + .slider .cards-icon { opacity: 0.4; }
 #view-toggle-checkbox:checked + .slider .list-icon { color: var(--accent); opacity: 1; }
 
-/* Search */
-.search-bar-container { max-width: 1000px; margin: 0 auto 1.5rem auto; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-.search-controls { display: none !important; /* Temporarily hidden per user request */ }
-.view-controls { display: flex; gap: 10px; align-items: center; margin-left: auto; } /* margin-left auto pushes it to the right when search is hidden */
-.control-label { font-size: 0.9rem; color: var(--text-muted); font-weight: 500;}
-
+/* Status Wrappers */
 .search-results-line-wrapper { max-width: 1000px; margin: 0 auto 1rem auto; padding: 0 1rem; height: 1.5rem; }
 #search-status-line { display: flex; gap: 10px; align-items: center; font-size: 0.85rem; font-weight: 500; color: var(--text-muted); padding-bottom: 5px; border-bottom: 2px solid var(--accent); }
 #search-nav-buttons { display: flex; gap: 4px; }
@@ -72,8 +70,8 @@ input[type="text"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px va
 
 /* Layout */
 .layout-wrapper { display: flex; gap: 3rem; max-width: 1000px; margin: 0 auto; }
-.feed-container { flex: 1; display: flex; flex-direction: column; gap: 2rem; min-width: 0; } /* min-width 0 prevents flex blowout */
-.timeline-container { width: 140px; flex-shrink: 0; position: sticky; top: 2rem; height: calc(100vh - 4rem); overflow-y: auto; scrollbar-width: none; } /* flex-shrink 0 protects timeline */
+.feed-container { flex: 1; display: flex; flex-direction: column; gap: 2rem; min-width: 0; } 
+.timeline-container { width: 140px; flex-shrink: 0; position: sticky; top: 2rem; height: calc(100vh - 4rem); overflow-y: auto; scrollbar-width: none; } 
 .timeline-track { border-left: 2px solid var(--border); padding-left: 1.5rem; display: flex; flex-direction: column; }
 
 /* Default Expanded Posts (And base styles) */
@@ -126,25 +124,9 @@ input[type="text"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px va
 .card-actions { display: flex; gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); clear: both; }
 .action-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 5px; position: relative; font-weight: 500; font-size: 0.95rem; }
 .action-btn:hover { color: var(--text); }
-.likers-tooltip { display: none; position: absolute; bottom: 100%; left: 0; background: var(--text); color: var(--bg); padding: 8px; border-radius: 6px; font-size: 0.8rem; white-space: nowrap; z-index: 10; flex-direction: column; gap: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
-.action-btn:hover .likers-tooltip { display: flex; }
-.likers-tooltip a { color: var(--bg); text-decoration: none; }
-.likers-tooltip a:hover { text-decoration: underline; }
 
 /* Default Globally Hidden Elements */
 .list-view-preview, .list-view-header { display: none; }
-
-/* Comments */
-.comments-section { margin-top: 1.5rem; background: var(--bg); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); }
-.comment { display: flex; gap: 10px; margin-bottom: 1rem; align-items: flex-start; }
-.comment img { width: 32px; height: 32px; border-radius: 50%; }
-.comment-body { flex: 1; }
-.comment-meta { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 3px; }
-.comment-meta a { color: var(--accent); font-weight: bold; text-decoration: none; }
-.comment-text { font-size: 0.95rem; line-height: 1.4; }
-.expand-comments { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 0.9rem; padding: 0; font-weight: 500; }
-.comment-hidden { display: none; }
-.expanded .comment-hidden { display: flex; }
 
 /* Shared UI */
 .feed-message { background: var(--card); border: 1px solid var(--border); border-radius: 8px; color: var(--text-muted); margin: 0; padding: 1.5rem; text-align: center;}
@@ -161,7 +143,6 @@ input[type="text"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px va
 .tabs { display: flex; gap: 8px; flex-wrap: wrap; }
 .tab { background: none; border: none; font-size: 0.95rem; color: var(--text-muted); cursor: pointer; padding: 6px 12px; border-radius: 8px; font-weight: 500; }
 .tab.active { color: white; background: var(--accent); font-weight: bold; }
-.badge { background: #ef4444; color: white; font-size: 0.7rem; padding: 2px 6px; border-radius: 10px; margin-left: 5px; }
 
 /* Editor */
 .metadata-inputs { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1rem; }
@@ -192,19 +173,13 @@ input[type="text"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px va
 .manager-delete-btn:hover { background: #dc2626; border-color: #dc2626; }
 .manager-delete-btn .glyphicon { display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 100%; font-style: normal; }
 .manager-delete-btn .glyphicon-trash::before { content: "\1F5D1"; color: white; font-size: 0.9rem; line-height: 1; }
-.queue-item { border: 1px solid var(--border); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; background: var(--card); }
-
 
 /* ==============================================================
    LIST VIEW OVERRIDES 
-   (Applied only when global toggle is in "list view")
    ============================================================== */
 
 #feed.list-view { gap: 10px; }
 
-/* When a card is in list view AND has NOT been clicked/expanded individually, 
-  force it into the mini 60px preview layout 
-*/
 .list-view .blog-card:not(.is-expanded) {
     padding: 1rem;
     transition: transform 0.15s, box-shadow 0.15s;
@@ -223,12 +198,10 @@ input[type="text"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px va
     color: var(--text);
 }
 
-/* Hide all standard expanded content inside mini cards */
 .list-view .blog-card:not(.is-expanded) .expanded-only,
 .list-view .blog-card:not(.is-expanded) .blog-tags, 
 .list-view .blog-card:not(.is-expanded) .blog-content, 
 .list-view .blog-card:not(.is-expanded) .card-actions, 
-.list-view .blog-card:not(.is-expanded) .comments-section, 
 .list-view .blog-card:not(.is-expanded) input[type="text"] + button, 
 .list-view .blog-card:not(.is-expanded) input[type="text"] + p, 
 .list-view .blog-card:not(.is-expanded) .action-btn, 
@@ -236,7 +209,6 @@ input[type="text"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px va
     display: none !important; 
 }
 
-/* Reveal the specific mini-headers and previews inside mini cards */
 .list-view .blog-card:not(.is-expanded) .list-view-header {
     display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 15px;
 }
@@ -273,9 +245,6 @@ input[type="text"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px va
     background: var(--bg); border-color: var(--accent); transform: scale(1.0); 
 }
 
-/* When a card IS expanded individually while the global list view is active 
-  (It falls back to normal sizes, but we keep the title area clickable to collapse it)
-*/
 .list-view .blog-card.is-expanded {
     cursor: default;
 }
@@ -286,5 +255,5 @@ input[type="text"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px va
     color: var(--text);
 }
 .list-view .blog-card.is-expanded .card-inner:hover h2 {
-    text-decoration: underline; /* A visual hint that clicking the title will collapse it back */
+    text-decoration: underline; 
 }

@@ -1,0 +1,12 @@
+{
+  "id": "post100320250952",
+  "timestamp": "2025-03-10T09:52:00.000Z",
+  "title": "{Syn} Goldbach Is Easy to State and Hard to Close",
+  "tags": [
+    "number theory",
+    "conjectures",
+    "goldbach"
+  ],
+  "content": "<p>Goldbach strong conjecture says every even integer greater than 2 is the sum of two primes. Computers have checked enormous ranges, but a proof for all even numbers is still unknown.</p>\n<img src=\"images/syn18-1.svg\" class=\"center-img\" alt=\"Goldbach illustration\">\n<p>The statement is a good example of number theory drama: elementary enough for a school notebook, yet resistant to the best available methods.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "post020120260708",
+  "timestamp": "2026-01-02T07:08:00.000Z",
+  "title": "{Syn} FunSearch Paired LLMs With Program Search",
+  "tags": [
+    "ai papers",
+    "algorithms",
+    "deepmind"
+  ],
+  "content": "<p>FunSearch used large language models to propose programs and an automated evaluator to score them. The loop searched for code that improved mathematical or algorithmic objectives.</p>\n<img src=\"images/syn70-1.svg\" class=\"center-img\" alt=\"FunSearch illustration\">\n<p>This matters because the evaluator grounds creativity: generated programs are not just prose claims, they have to run and score well.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

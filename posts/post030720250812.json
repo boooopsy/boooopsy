@@ -1,0 +1,12 @@
+{
+  "id": "post030720250812",
+  "timestamp": "2025-07-03T08:12:00.000Z",
+  "title": "{Syn} Union-Find Makes Connectivity Feel Constant",
+  "tags": [
+    "algorithms",
+    "data structures",
+    "graphs"
+  ],
+  "content": "<p>The disjoint-set union structure supports merging sets and asking whether two items are in the same set. With path compression and union by rank, operations are almost constant time in practice.</p>\n<img src=\"images/syn38-1.svg\" class=\"center-img\" alt=\"Union-Find illustration\">\n<p>It is the quiet engine behind Kruskal minimum spanning tree, image segmentation, offline connectivity, and many contest problems.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

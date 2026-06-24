@@ -1,0 +1,12 @@
+{
+  "id": "post020420251910",
+  "timestamp": "2025-04-02T19:10:00.000Z",
+  "title": "{Syn} Calendars Are a Chinese Remainder Playground",
+  "tags": [
+    "math facts",
+    "modular arithmetic",
+    "calendar"
+  ],
+  "content": "<p>Calendar arithmetic is full of modular cycles: weekdays repeat modulo 7, months cycle through their own lengths, and leap-year rules add another layer.</p>\n<img src=\"images/syn24-1.svg\" class=\"center-img\" alt=\"Calendar cycles illustration\">\n<p>The Chinese remainder theorem explains why separate cycle facts can sometimes determine a date pattern uniquely over a larger repeating window.</p>\n<blockquote>Why it matters: math facts keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

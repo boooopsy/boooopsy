@@ -1,0 +1,12 @@
+{
+  "id": "post311020250845",
+  "timestamp": "2025-10-31T08:45:00.000Z",
+  "title": "{Syn} Diffusion Models Learned to Denoise Images Into Existence",
+  "tags": [
+    "ai papers",
+    "generative ai",
+    "diffusion"
+  ],
+  "content": "<p>Diffusion models learn to reverse a gradual noising process. Starting from noise, they repeatedly denoise until a coherent sample appears.</p>\n<img src=\"images/syn59-1.svg\" class=\"center-img\" alt=\"Diffusion illustration\">\n<p>The framework became central to image generation because it offers stable training and high-quality samples, especially when paired with text conditioning.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

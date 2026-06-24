@@ -1,0 +1,12 @@
+{
+  "id": "post200520260720",
+  "timestamp": "2026-05-20T07:20:00.000Z",
+  "title": "{Syn} Genetic Algorithms Search by Selection and Mutation",
+  "tags": [
+    "algorithms",
+    "optimization",
+    "evolutionary"
+  ],
+  "content": "<p>Genetic algorithms maintain a population of candidate solutions, score them with a fitness function, and create new candidates through selection, crossover, and mutation.</p>\n<img src=\"images/syn94-1.svg\" class=\"center-img\" alt=\"Genetic alg. illustration\">\n<p>They are useful when gradients are unavailable or the search space is awkward, but they still depend heavily on representation and fitness design.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

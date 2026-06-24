@@ -1,0 +1,12 @@
+{
+  "id": "post100920250848",
+  "timestamp": "2025-09-10T08:48:00.000Z",
+  "title": "{Syn} AlexNet Announced the GPU Deep Learning Era",
+  "tags": [
+    "ai papers",
+    "computer vision",
+    "deep learning"
+  ],
+  "content": "<p>AlexNet won the 2012 ImageNet competition by a large margin using a deep convolutional neural network trained on GPUs.</p>\n<img src=\"images/syn50-1.svg\" class=\"center-img\" alt=\"AlexNet illustration\">\n<p>It helped convince the machine-learning community that scale, learned visual features, and accelerator hardware could outperform carefully hand-engineered pipelines.</p>\n<img src=\"images/syn50-2.svg\" class=\"center-img\" alt=\"AlexNet detail illustration\">\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

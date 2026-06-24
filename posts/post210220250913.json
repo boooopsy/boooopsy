@@ -1,0 +1,12 @@
+{
+  "id": "post210220250913",
+  "timestamp": "2025-02-21T09:13:00.000Z",
+  "title": "{Syn} Carmichael Numbers Fool Fermat Tests",
+  "tags": [
+    "number theory",
+    "primality",
+    "math facts"
+  ],
+  "content": "<p>Carmichael numbers are composite numbers that pass Fermat primality tests for every base coprime to them. The smallest is 561, which equals 3 times 11 times 17.</p>\n<img src=\"images/syn15-1.svg\" class=\"center-img\" alt=\"Carmichael illustration\">\n<p>They are a reminder that a theorem can inspire a useful test while still leaving edge cases that demand sharper tools.</p>\n<img src=\"images/syn15-2.svg\" class=\"center-img\" alt=\"Carmichael detail illustration\">\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

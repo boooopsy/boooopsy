@@ -1,0 +1,12 @@
+{
+  "id": "post250120260800",
+  "timestamp": "2026-01-25T08:00:00.000Z",
+  "title": "{Syn} AlphaEvolve Used Gemini to Hunt for Algorithms",
+  "tags": [
+    "ai papers",
+    "algorithms",
+    "deepmind"
+  ],
+  "content": "<p>Google DeepMind introduced AlphaEvolve in 2025 as a Gemini-powered coding agent for designing and improving algorithms.</p>\n<img src=\"images/syn74-1.svg\" class=\"center-img\" alt=\"AlphaEvolve illustration\">\n<p>The headline idea is evolutionary search over programs: propose code, evaluate it, keep the strongest variants, and repeat in domains where objective tests are available.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

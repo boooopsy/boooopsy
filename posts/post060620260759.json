@@ -1,0 +1,12 @@
+{
+  "id": "post060620260759",
+  "timestamp": "2026-06-06T07:59:00.000Z",
+  "title": "{Syn} B-Trees Keep Databases Shallow",
+  "tags": [
+    "algorithms",
+    "data structures",
+    "databases"
+  ],
+  "content": "<p>B-trees store many keys per node, which keeps the tree shallow and reduces expensive disk or page reads. That is why they are a classic database index structure.</p>\n<img src=\"images/syn97-1.svg\" class=\"center-img\" alt=\"B-tree illustration\">\n<p>The branching factor is the trick: fewer levels usually means fewer random accesses, and storage systems care deeply about that.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

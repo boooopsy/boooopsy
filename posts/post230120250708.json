@@ -1,0 +1,12 @@
+{
+  "id": "post230120250708",
+  "timestamp": "2025-01-23T07:08:00.000Z",
+  "title": "{Syn} Fermat Two-Square Theorem Has a Mod 4 Signature",
+  "tags": [
+    "number theory",
+    "fermat",
+    "sums of squares"
+  ],
+  "content": "<p>Fermat proved that an odd prime can be written as a sum of two squares exactly when it is 1 modulo 4. For example, 13 equals 2^2 + 3^2, while 7 cannot be written that way.</p>\n<img src=\"images/syn10-1.svg\" class=\"center-img\" alt=\"p = a^2 + b^2 illustration\">\n<p>The theorem is a gateway into how congruences, geometry, and factorization in larger number systems talk to one another.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

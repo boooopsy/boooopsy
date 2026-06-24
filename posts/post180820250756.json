@@ -1,0 +1,12 @@
+{
+  "id": "post180820250756",
+  "timestamp": "2025-08-18T07:56:00.000Z",
+  "title": "{Syn} SHA-256 Makes Small Changes Avalanche",
+  "tags": [
+    "cryptography",
+    "hashing",
+    "algorithms"
+  ],
+  "content": "<p>SHA-256 maps input data to a 256-bit digest. A tiny input change should produce an unrelated-looking output, a behavior called the avalanche effect.</p>\n<img src=\"images/syn46-1.svg\" class=\"center-img\" alt=\"SHA-256 illustration\">\n<p>Cryptographic hashes are not encryption. They are one-way fingerprints used for integrity checks, commitments, proof-of-work systems, and signatures.</p>\n<blockquote>Why it matters: cryptography keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

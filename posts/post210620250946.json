@@ -1,0 +1,12 @@
+{
+  "id": "post210620250946",
+  "timestamp": "2025-06-21T09:46:00.000Z",
+  "title": "{Syn} Dijkstra Algorithm Greedily Finds Shortest Paths",
+  "tags": [
+    "algorithms",
+    "graphs",
+    "shortest paths"
+  ],
+  "content": "<p>Dijkstra algorithm finds shortest paths from one source in a graph with nonnegative edge weights. It repeatedly settles the nearest unsettled vertex.</p>\n<img src=\"images/syn36-1.svg\" class=\"center-img\" alt=\"Dijkstra illustration\">\n<p>The nonnegative condition matters. With negative edges, a later path can undercut a distance that looked final, which is why Bellman-Ford exists.</p>\n<img src=\"images/syn36-2.svg\" class=\"center-img\" alt=\"Dijkstra detail illustration\">\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

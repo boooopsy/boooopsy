@@ -1,0 +1,12 @@
+{
+  "id": "post170220260952",
+  "timestamp": "2026-02-17T09:52:00.000Z",
+  "title": "{Syn} Causal Attention Keeps the Future Hidden",
+  "tags": [
+    "ai papers",
+    "transformers",
+    "language models"
+  ],
+  "content": "<p>Autoregressive language models use a causal attention mask so each token can attend only to previous tokens, not future ones.</p>\n<img src=\"images/syn78-1.svg\" class=\"center-img\" alt=\"Causal mask illustration\">\n<p>That mask is what turns training text into a next-token prediction task and lets generated text unfold one token at a time.</p>\n<img src=\"images/syn78-2.svg\" class=\"center-img\" alt=\"Causal mask detail illustration\">\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

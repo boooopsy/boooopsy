@@ -1,0 +1,12 @@
+{
+  "id": "post210920250714",
+  "timestamp": "2025-09-21T07:14:00.000Z",
+  "title": "{Syn} GANs Framed Generation as a Two-Model Game",
+  "tags": [
+    "ai papers",
+    "generative ai",
+    "deep learning"
+  ],
+  "content": "<p>Generative adversarial networks train a generator and discriminator together. The generator tries to synthesize convincing samples while the discriminator tries to spot fakes.</p>\n<img src=\"images/syn52-1.svg\" class=\"center-img\" alt=\"GAN illustration\">\n<p>GANs produced sharp images and shaped the generative modeling conversation, even though diffusion and autoregressive models later became dominant in many areas.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

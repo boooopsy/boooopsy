@@ -1,0 +1,12 @@
+{
+  "id": "post120520250815",
+  "timestamp": "2025-05-12T08:15:00.000Z",
+  "title": "{Syn} 0.999... Equals 1 Without a Trick",
+  "tags": [
+    "math facts",
+    "real numbers",
+    "funny science"
+  ],
+  "content": "<p>The decimal 0.999... is exactly equal to 1 in the real numbers. One quick reason: 1/3 equals 0.333..., so 3 times 1/3 equals 0.999..., which is 1.</p>\n<img src=\"images/syn29-1.svg\" class=\"center-img\" alt=\"0.999... = 1 illustration\">\n<p>The discomfort usually comes from treating an infinite decimal as if it stops just before 1. It does not stop.</p>\n<img src=\"images/syn29-2.svg\" class=\"center-img\" alt=\"0.999... = 1 detail illustration\">\n<blockquote>Why it matters: math facts keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

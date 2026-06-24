@@ -1,0 +1,12 @@
+{
+  "id": "post150920250901",
+  "timestamp": "2025-09-15T09:01:00.000Z",
+  "title": "{Syn} ResNet Let Very Deep Networks Breathe",
+  "tags": [
+    "ai papers",
+    "computer vision",
+    "deep learning"
+  ],
+  "content": "<p>Residual networks introduced skip connections that let layers learn corrections rather than entire transformations. This made it much easier to train very deep models.</p>\n<img src=\"images/syn51-1.svg\" class=\"center-img\" alt=\"Residuals illustration\">\n<p>The idea spread far beyond image classification because skip paths improve gradient flow and preserve information across depth.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "post051220250803",
+  "timestamp": "2025-12-05T08:03:00.000Z",
+  "title": "{Syn} Mamba Brought State Space Models Back Into the Chat",
+  "tags": [
+    "ai papers",
+    "sequence models",
+    "algorithms"
+  ],
+  "content": "<p>Mamba is a selective state space model architecture designed for efficient sequence modeling. It offers linear-time scaling in sequence length for its core recurrence.</p>\n<img src=\"images/syn65-1.svg\" class=\"center-img\" alt=\"Mamba illustration\">\n<p>The broader lesson is that attention is powerful, but not the only way to model long sequences.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

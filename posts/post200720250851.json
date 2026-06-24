@@ -1,0 +1,12 @@
+{
+  "id": "post200720250851",
+  "timestamp": "2025-07-20T08:51:00.000Z",
+  "title": "{Syn} PageRank Treated Links Like Votes With Memory",
+  "tags": [
+    "algorithms",
+    "web",
+    "graphs"
+  ],
+  "content": "<p>PageRank models a web surfer who follows links and occasionally jumps to a random page. A page becomes important when important pages link to it.</p>\n<img src=\"images/syn41-1.svg\" class=\"center-img\" alt=\"PageRank illustration\">\n<p>The idea helped make web search scalable because it used the graph structure of the web as a ranking signal, not just the text on each page.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

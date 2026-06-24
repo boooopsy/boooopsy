@@ -1,0 +1,12 @@
+{
+  "id": "post180620260925",
+  "timestamp": "2026-06-18T09:25:00.000Z",
+  "title": "{Syn} Reed-Solomon Codes Repair Missing Symbols",
+  "tags": [
+    "algorithms",
+    "error correction",
+    "coding theory"
+  ],
+  "content": "<p>Reed-Solomon codes add redundant symbols by evaluating polynomials over finite fields. If enough symbols arrive intact, the original message can be reconstructed.</p>\n<img src=\"images/syn99-1.svg\" class=\"center-img\" alt=\"Reed-Solomon illustration\">\n<p>They appear in storage, QR codes, satellite communication, and older media formats because algebra can turn partial damage into recoverable data.</p>\n<img src=\"images/syn99-2.svg\" class=\"center-img\" alt=\"Reed-Solomon detail illustration\">\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

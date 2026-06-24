@@ -1,0 +1,12 @@
+{
+  "id": "post140520260907",
+  "timestamp": "2026-05-14T09:07:00.000Z",
+  "title": "{Syn} Simulated Annealing Borrows From Cooling Metal",
+  "tags": [
+    "algorithms",
+    "optimization",
+    "randomized"
+  ],
+  "content": "<p>Simulated annealing is an optimization method that sometimes accepts worse moves early on, then becomes more conservative as the temperature schedule cools.</p>\n<img src=\"images/syn93-1.svg\" class=\"center-img\" alt=\"Annealing illustration\">\n<p>The metaphor comes from annealing in metallurgy, where controlled cooling helps material settle into lower-energy structures.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

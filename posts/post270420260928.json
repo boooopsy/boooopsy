@@ -1,0 +1,12 @@
+{
+  "id": "post270420260928",
+  "timestamp": "2026-04-27T09:28:00.000Z",
+  "title": "{Syn} Grover Algorithm Gives Quadratic Search Speedup",
+  "tags": [
+    "algorithms",
+    "quantum computing",
+    "search"
+  ],
+  "content": "<p>Grover algorithm can search an unstructured space of size N in about square root of N queries on a quantum computer.</p>\n<img src=\"images/syn90-1.svg\" class=\"center-img\" alt=\"Grover illustration\">\n<p>It is powerful but not magic: the speedup is quadratic, not exponential, which still matters for brute-force security estimates.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

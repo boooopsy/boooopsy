@@ -1,0 +1,12 @@
+{
+  "id": "post160620250833",
+  "timestamp": "2025-06-16T08:33:00.000Z",
+  "title": "{Syn} FFT Turns Convolution Into Pointwise Multiplication",
+  "tags": [
+    "algorithms",
+    "fft",
+    "signal processing"
+  ],
+  "content": "<p>The fast Fourier transform computes a discrete Fourier transform in O(n log n) time instead of O(n^2). It is one of the great algorithmic speedups of the twentieth century.</p>\n<img src=\"images/syn35-1.svg\" class=\"center-img\" alt=\"FFT illustration\">\n<p>FFT powers signal processing, image analysis, polynomial multiplication, audio tools, and many scientific simulations.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

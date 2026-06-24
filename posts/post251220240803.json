@@ -1,0 +1,12 @@
+{
+  "id": "post251220240803",
+  "timestamp": "2024-12-25T08:03:00.000Z",
+  "title": "{Syn} RSA Turns Factoring Into a Lock",
+  "tags": [
+    "number theory",
+    "cryptography",
+    "rsa"
+  ],
+  "content": "<p>RSA public-key cryptography relies on arithmetic modulo a product of two large primes. Multiplication is easy, but recovering the primes from their product is believed to be hard at the sizes used in practice.</p>\n<img src=\"images/syn05-1.svg\" class=\"center-img\" alt=\"RSA illustration\">\n<p>The design is a clean example of a one-way trapdoor: anyone can use the public key to encrypt or verify, while the private key uses hidden factorization information.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

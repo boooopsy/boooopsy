@@ -1,0 +1,12 @@
+{
+  "id": "post170120250955",
+  "timestamp": "2025-01-17T09:55:00.000Z",
+  "title": "{Syn} Mersenne Primes Hide in Powers of Two",
+  "tags": [
+    "number theory",
+    "primes",
+    "mersenne"
+  ],
+  "content": "<p>A Mersenne prime has the form 2^p - 1, and p itself must be prime. The reverse is not guaranteed: 2^11 - 1 equals 2047, which factors as 23 times 89.</p>\n<img src=\"images/syn09-1.svg\" class=\"center-img\" alt=\"2^p - 1 illustration\">\n<p>Mersenne primes are famous partly because the Lucas-Lehmer test is especially efficient for this form, making them natural targets in record prime searches.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

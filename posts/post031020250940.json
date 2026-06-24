@@ -1,0 +1,12 @@
+{
+  "id": "post031020250940",
+  "timestamp": "2025-10-03T09:40:00.000Z",
+  "title": "{Syn} BERT Made Bidirectional Pretraining Mainstream",
+  "tags": [
+    "ai papers",
+    "language models",
+    "nlp"
+  ],
+  "content": "<p>BERT used masked-language-model pretraining to learn bidirectional text representations. Instead of predicting only the next token, it learned from hidden tokens inside a sentence.</p>\n<img src=\"images/syn54-1.svg\" class=\"center-img\" alt=\"BERT illustration\">\n<p>The model improved many NLP benchmarks and helped establish pretrain-then-finetune as a dominant workflow.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

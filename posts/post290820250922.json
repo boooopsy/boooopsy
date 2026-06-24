@@ -1,0 +1,12 @@
+{
+  "id": "post290820250922",
+  "timestamp": "2025-08-29T09:22:00.000Z",
+  "title": "{Syn} Fast Inverse Square Root Became Programming Folklore",
+  "tags": [
+    "algorithms",
+    "graphics",
+    "funny science"
+  ],
+  "content": "<p>The fast inverse square root routine became famous for approximating 1/sqrt(x) quickly in graphics code. Its bit-level initial guess and Newton step made it memorable.</p>\n<img src=\"images/syn48-1.svg\" class=\"center-img\" alt=\"1/sqrt(x) illustration\">\n<p>Modern hardware often has direct support for similar operations, but the example remains a classic lesson in numerical approximation and machine representation.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

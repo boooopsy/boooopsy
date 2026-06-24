@@ -1,0 +1,12 @@
+{
+  "id": "post270220250726",
+  "timestamp": "2025-02-27T07:26:00.000Z",
+  "title": "{Syn} Euler Phi Counts Units Modulo n",
+  "tags": [
+    "number theory",
+    "euler phi",
+    "modular arithmetic"
+  ],
+  "content": "<p>Euler phi of n counts the positive integers up to n that are coprime to n. For a prime p, phi(p) equals p - 1 because every nonzero residue is invertible.</p>\n<img src=\"images/syn16-1.svg\" class=\"center-img\" alt=\"phi(n) illustration\">\n<p>The function appears in Euler theorem, RSA, and many counting arguments where multiplication modulo n matters.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

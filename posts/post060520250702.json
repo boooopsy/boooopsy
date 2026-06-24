@@ -1,0 +1,12 @@
+{
+  "id": "post060520250702",
+  "timestamp": "2025-05-06T07:02:00.000Z",
+  "title": "{Syn} Benford Law Likes Leading Ones",
+  "tags": [
+    "math facts",
+    "statistics",
+    "data"
+  ],
+  "content": "<p>Benford law says that in many naturally occurring datasets, leading digit 1 appears much more often than leading digit 9. The probability for digit d is log10(1 + 1/d).</p>\n<img src=\"images/syn28-1.svg\" class=\"center-img\" alt=\"Benford illustration\">\n<p>It works best for data spread across several orders of magnitude, which is why it appears in finance, populations, physical constants, and fraud screening.</p>\n<blockquote>Why it matters: math facts keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

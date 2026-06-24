@@ -1,0 +1,12 @@
+{
+  "id": "post270920250827",
+  "timestamp": "2025-09-27T08:27:00.000Z",
+  "title": "{Syn} Attention Is All You Need Changed the Default Architecture",
+  "tags": [
+    "ai papers",
+    "transformers",
+    "breakthroughs"
+  ],
+  "content": "<p>The 2017 Transformer paper replaced recurrent sequence processing with attention-based layers and parallel training. Its title, Attention Is All You Need, aged unusually well.</p>\n<img src=\"images/syn53-1.svg\" class=\"center-img\" alt=\"Transformer illustration\">\n<p>Transformers now sit behind many language, vision, audio, and multimodal systems because attention makes long-range interactions easier to model at scale.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

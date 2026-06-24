@@ -1,0 +1,12 @@
+{
+  "id": "post090220250747",
+  "timestamp": "2025-02-09T07:47:00.000Z",
+  "title": "{Syn} Elliptic Curves Add Points Like Numbers",
+  "tags": [
+    "number theory",
+    "elliptic curves",
+    "cryptography"
+  ],
+  "content": "<p>An elliptic curve is not an ellipse; it is usually an equation like y^2 = x^3 + ax + b. Its rational points can be added with a geometric chord-and-tangent rule.</p>\n<img src=\"images/syn13-1.svg\" class=\"center-img\" alt=\"Elliptic Curves illustration\">\n<p>That group structure powers elliptic-curve cryptography and also sits at the heart of deep arithmetic questions, including the Birch and Swinnerton-Dyer conjecture.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

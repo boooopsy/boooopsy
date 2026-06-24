@@ -1,0 +1,12 @@
+{
+  "id": "post260520260833",
+  "timestamp": "2026-05-26T08:33:00.000Z",
+  "title": "{Syn} The Sieve of Eratosthenes Is Still the Clean Prime Machine",
+  "tags": [
+    "algorithms",
+    "number theory",
+    "primes"
+  ],
+  "content": "<p>The sieve of Eratosthenes marks multiples of each prime to list all primes up to a limit. It is simple, visual, and very efficient for moderate ranges.</p>\n<img src=\"images/syn95-1.svg\" class=\"center-img\" alt=\"Sieve illustration\">\n<p>Segmented sieves extend the idea to larger intervals by processing chunks, which keeps memory use under control.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

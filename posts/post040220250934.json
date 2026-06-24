@@ -1,0 +1,12 @@
+{
+  "id": "post040220250934",
+  "timestamp": "2025-02-04T09:34:00.000Z",
+  "title": "{Syn} p-adic Numbers Measure Divisibility Instead of Size",
+  "tags": [
+    "number theory",
+    "p-adics",
+    "math facts"
+  ],
+  "content": "<p>In the p-adic world, two numbers are close when their difference is divisible by a high power of the prime p. That makes 1 and 1 + 5^10 extremely close in the 5-adic metric.</p>\n<img src=\"images/syn12-1.svg\" class=\"center-img\" alt=\"p-adic distance illustration\">\n<p>This viewpoint looks strange at first, but it is central in modern number theory because it turns divisibility into geometry.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

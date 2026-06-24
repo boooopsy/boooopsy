@@ -1,0 +1,12 @@
+{
+  "id": "post060220260726",
+  "timestamp": "2026-02-06T07:26:00.000Z",
+  "title": "{Syn} Scaling Laws Made Model Growth Predictable",
+  "tags": [
+    "ai papers",
+    "scaling laws",
+    "language models"
+  ],
+  "content": "<p>Neural scaling laws describe regular relationships between model performance, data, parameters, and compute. They helped make large training runs less like guesswork.</p>\n<img src=\"images/syn76-1.svg\" class=\"center-img\" alt=\"Scaling laws illustration\">\n<p>The practical impact is planning: if a curve is reliable, teams can forecast whether more data, a larger model, or more compute is likely to help.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

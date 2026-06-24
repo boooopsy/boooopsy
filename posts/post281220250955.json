@@ -1,0 +1,12 @@
+{
+  "id": "post281220250955",
+  "timestamp": "2025-12-28T09:55:00.000Z",
+  "title": "{Syn} AlphaDev Looked for Faster Sorting and Hashing Code",
+  "tags": [
+    "ai papers",
+    "algorithms",
+    "deepmind"
+  ],
+  "content": "<p>AlphaDev used reinforcement learning to discover low-level algorithms, including improved short sorting routines that were later added to widely used C++ library implementations.</p>\n<img src=\"images/syn69-1.svg\" class=\"center-img\" alt=\"AlphaDev illustration\">\n<p>It is an example of AI contributing not only predictions, but small executable improvements in software infrastructure.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

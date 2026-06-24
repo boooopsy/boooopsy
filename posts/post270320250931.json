@@ -1,0 +1,12 @@
+{
+  "id": "post270320250931",
+  "timestamp": "2025-03-27T09:31:00.000Z",
+  "title": "{Syn} Collatz Is the Tiny Monster of Iteration",
+  "tags": [
+    "math facts",
+    "conjectures",
+    "collatz"
+  ],
+  "content": "<p>The Collatz rule is simple: if n is even, divide by 2; if n is odd, replace it with 3n + 1. The conjecture says every positive starting value eventually reaches 1.</p>\n<img src=\"images/syn21-1.svg\" class=\"center-img\" alt=\"3n+1 illustration\">\n<p>No counterexample is known, and no proof is known. It is a perfect warning that small programs can generate deep mathematical trouble.</p>\n<blockquote>Why it matters: math facts keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

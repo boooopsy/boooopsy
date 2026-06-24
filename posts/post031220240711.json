@@ -1,0 +1,12 @@
+{
+  "id": "post031220240711",
+  "timestamp": "2024-12-03T07:11:00.000Z",
+  "title": "{Syn} Euclid Still Wins the Prime Game",
+  "tags": [
+    "number theory",
+    "primes",
+    "euclid"
+  ],
+  "content": "<p>Euclid proved that there are infinitely many primes more than two thousand years ago. The trick is still beautifully compact: multiply any finite list of primes, add 1, and the result has a prime divisor that was not in the original list.</p>\n<img src=\"images/syn01-1.svg\" class=\"center-img\" alt=\"Infinite Primes illustration\">\n<p>The proof does not give the next prime efficiently, but it shows why a complete prime catalog can never exist. That gap between existence and efficient discovery is a recurring theme in number theory.</p>\n<img src=\"images/syn01-2.svg\" class=\"center-img\" alt=\"Infinite Primes detail illustration\">\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

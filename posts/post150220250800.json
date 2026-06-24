@@ -1,0 +1,12 @@
+{
+  "id": "post150220250800",
+  "timestamp": "2025-02-15T08:00:00.000Z",
+  "title": "{Syn} Pollard Rho Finds Factors by Wandering",
+  "tags": [
+    "algorithms",
+    "number theory",
+    "factorization"
+  ],
+  "content": "<p>Pollard rho factorization uses a pseudo-random sequence and looks for a collision modulo an unknown factor. The name comes from the Greek-letter shape made by a path with a cycle.</p>\n<img src=\"images/syn14-1.svg\" class=\"center-img\" alt=\"Pollard rho illustration\">\n<p>It is especially useful for finding smaller factors of large composites, and it shows how randomness can make arithmetic search surprisingly nimble.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

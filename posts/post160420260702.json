@@ -1,0 +1,12 @@
+{
+  "id": "post160420260702",
+  "timestamp": "2026-04-16T07:02:00.000Z",
+  "title": "{Syn} Quantum Error Correction Protects Fragile Information",
+  "tags": [
+    "science facts",
+    "quantum computing",
+    "algorithms"
+  ],
+  "content": "<p>Quantum information is fragile because measurement and noise can disturb a state. Quantum error correction encodes logical qubits across multiple physical qubits.</p>\n<img src=\"images/syn88-1.svg\" class=\"center-img\" alt=\"QEC illustration\">\n<p>The surprising part is that errors can be diagnosed indirectly without copying an unknown quantum state, which would violate the no-cloning theorem.</p>\n<blockquote>Why it matters: science facts keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

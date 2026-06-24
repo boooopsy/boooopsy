@@ -1,0 +1,12 @@
+{
+  "id": "post310120260913",
+  "timestamp": "2026-01-31T09:13:00.000Z",
+  "title": "{Syn} Mixture-of-Experts Models Route Tokens to Specialists",
+  "tags": [
+    "ai papers",
+    "language models",
+    "scaling"
+  ],
+  "content": "<p>Mixture-of-experts architectures activate only part of a model for each token, routing inputs to selected expert subnetworks.</p>\n<img src=\"images/syn75-1.svg\" class=\"center-img\" alt=\"MoE illustration\">\n<p>The appeal is computational efficiency: a model can have many parameters while using a smaller active subset per step, though routing and load balancing become new challenges.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

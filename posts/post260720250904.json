@@ -1,0 +1,12 @@
+{
+  "id": "post260720250904",
+  "timestamp": "2025-07-26T09:04:00.000Z",
+  "title": "{Syn} MapReduce Split Big Data Into Two Verbs",
+  "tags": [
+    "algorithms",
+    "distributed systems",
+    "data"
+  ],
+  "content": "<p>MapReduce organizes distributed computation around map and reduce phases. Map emits key-value pairs; reduce combines values with the same key.</p>\n<img src=\"images/syn42-1.svg\" class=\"center-img\" alt=\"MapReduce illustration\">\n<p>The abstraction became influential because it hid much of the messy scheduling and fault tolerance needed to process large datasets across clusters.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

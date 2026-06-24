@@ -1,0 +1,12 @@
+{
+  "id": "post010520250949",
+  "timestamp": "2025-05-01T09:49:00.000Z",
+  "title": "{Syn} Monty Hall Rewards Switching",
+  "tags": [
+    "probability",
+    "math facts",
+    "bayes"
+  ],
+  "content": "<p>In the classic Monty Hall problem, switching doors after the host reveals a goat wins with probability 2/3. Staying wins with probability 1/3.</p>\n<img src=\"images/syn27-1.svg\" class=\"center-img\" alt=\"Switch wins illustration\">\n<p>The host action is informative because the host knows where the prize is. That conditional information is why the puzzle keeps causing arguments.</p>\n<blockquote>Why it matters: probability keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

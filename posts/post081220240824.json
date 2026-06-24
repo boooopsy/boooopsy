@@ -1,0 +1,12 @@
+{
+  "id": "post081220240824",
+  "timestamp": "2024-12-08T08:24:00.000Z",
+  "title": "{Syn} The Prime Number Theorem as a Density Map",
+  "tags": [
+    "number theory",
+    "primes",
+    "asymptotics"
+  ],
+  "content": "<p>The prime number theorem says that the number of primes up to x is approximately x divided by log x. In plain language, primes thin out, but they thin out with a very specific rhythm.</p>\n<img src=\"images/syn02-1.svg\" class=\"center-img\" alt=\"pi(x) ~ x/log(x) illustration\">\n<p>This is why a random large integer near x has about a 1/log x chance of being prime. The theorem turns a jagged counting function into a reliable large-scale forecast.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

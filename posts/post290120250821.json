@@ -1,0 +1,12 @@
+{
+  "id": "post290120250821",
+  "timestamp": "2025-01-29T08:21:00.000Z",
+  "title": "{Syn} Quadratic Reciprocity Is a Hidden Symmetry",
+  "tags": [
+    "number theory",
+    "quadratic reciprocity",
+    "gauss"
+  ],
+  "content": "<p>Quadratic reciprocity explains when one odd prime is a square modulo another odd prime. Gauss called it the golden theorem and gave several proofs during his career.</p>\n<img src=\"images/syn11-1.svg\" class=\"center-img\" alt=\"Residues illustration\">\n<p>The result is a prototype for reciprocity laws across modern number theory, including the much broader patterns studied in class field theory.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

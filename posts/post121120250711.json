@@ -1,0 +1,12 @@
+{
+  "id": "post121120250711",
+  "timestamp": "2025-11-12T07:11:00.000Z",
+  "title": "{Syn} Vision Transformers Asked Images to Become Patches",
+  "tags": [
+    "ai papers",
+    "vision transformers",
+    "computer vision"
+  ],
+  "content": "<p>Vision Transformers split an image into patches and process those patches much like tokens in a sentence. With enough data, the architecture competes strongly in vision tasks.</p>\n<img src=\"images/syn61-1.svg\" class=\"center-img\" alt=\"ViT illustration\">\n<p>ViT helped show that convolution was not the only viable inductive bias for high-performing image models.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

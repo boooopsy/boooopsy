@@ -1,0 +1,12 @@
+{
+  "id": "post201020250919",
+  "timestamp": "2025-10-20T09:19:00.000Z",
+  "title": "{Syn} AlphaZero Learned Games From Self-Play",
+  "tags": [
+    "ai papers",
+    "reinforcement learning",
+    "games"
+  ],
+  "content": "<p>AlphaZero learned chess, shogi, and Go through self-play using the game rules, neural networks, and search. It did not need human game records as training examples.</p>\n<img src=\"images/syn57-1.svg\" class=\"center-img\" alt=\"AlphaZero illustration\">\n<p>The result made self-play feel like a general recipe for domains where simulators and clear win conditions are available.</p>\n<img src=\"images/syn57-2.svg\" class=\"center-img\" alt=\"AlphaZero detail illustration\">\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

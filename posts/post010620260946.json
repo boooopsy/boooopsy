@@ -1,0 +1,12 @@
+{
+  "id": "post010620260946",
+  "timestamp": "2026-06-01T09:46:00.000Z",
+  "title": "{Syn} Suffix Arrays Sort Every Ending of a String",
+  "tags": [
+    "algorithms",
+    "strings",
+    "data structures"
+  ],
+  "content": "<p>A suffix array stores the starting positions of all suffixes of a string in sorted order. With extra indexing, it supports fast substring search.</p>\n<img src=\"images/syn96-1.svg\" class=\"center-img\" alt=\"Suffix array illustration\">\n<p>It is a compact alternative to suffix trees in many text-processing workloads, including genomics, compression, and search.</p>\n<img src=\"images/syn96-2.svg\" class=\"center-img\" alt=\"Suffix array detail illustration\">\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

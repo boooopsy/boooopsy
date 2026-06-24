@@ -1,0 +1,12 @@
+{
+  "id": "post311220241229",
+  "timestamp": "2024-12-31T12:29:00.000Z",
+  "title": "{Syn} AKS Made Primality Deterministic in Polynomial Time",
+  "tags": [
+    "algorithms",
+    "number theory",
+    "primality"
+  ],
+  "content": "<p>The AKS primality test, announced in 2002, showed that deciding whether a number is prime can be done deterministically in polynomial time without assuming unproved hypotheses.</p>\n<img src=\"images/syn07-1.svg\" class=\"center-img\" alt=\"AKS illustration\">\n<p>Practical systems often use faster probabilistic tests, but AKS mattered because it settled a foundational complexity question with an unconditional answer.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

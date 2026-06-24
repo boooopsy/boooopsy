@@ -1,0 +1,12 @@
+{
+  "id": "post231120250937",
+  "timestamp": "2025-11-23T09:37:00.000Z",
+  "title": "{Syn} LoRA Made Fine-Tuning Lightweight",
+  "tags": [
+    "ai papers",
+    "fine tuning",
+    "language models"
+  ],
+  "content": "<p>Low-rank adaptation, or LoRA, fine-tunes large models by training small low-rank update matrices while keeping the original weights frozen.</p>\n<img src=\"images/syn63-1.svg\" class=\"center-img\" alt=\"LoRA illustration\">\n<p>The method reduces memory and storage costs, which made customized model adaptation more accessible.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

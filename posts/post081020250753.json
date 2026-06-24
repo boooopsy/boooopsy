@@ -1,0 +1,12 @@
+{
+  "id": "post081020250753",
+  "timestamp": "2025-10-08T07:53:00.000Z",
+  "title": "{Syn} GPT Showed Next-Token Prediction Could Scale",
+  "tags": [
+    "ai papers",
+    "language models",
+    "generative ai"
+  ],
+  "content": "<p>The GPT line demonstrated that autoregressive next-token prediction could produce broadly useful language models when scaled with data and compute.</p>\n<img src=\"images/syn55-1.svg\" class=\"center-img\" alt=\"GPT illustration\">\n<p>The recipe is conceptually simple but powerful: train on large text corpora, then adapt behavior through prompting, fine-tuning, or preference optimization.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

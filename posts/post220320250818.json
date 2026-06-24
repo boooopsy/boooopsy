@@ -1,0 +1,12 @@
+{
+  "id": "post220320250818",
+  "timestamp": "2025-03-22T08:18:00.000Z",
+  "title": "{Syn} Green-Tao Found Arithmetic Progressions in the Primes",
+  "tags": [
+    "number theory",
+    "primes",
+    "green-tao"
+  ],
+  "content": "<p>The Green-Tao theorem proves that the primes contain arbitrarily long arithmetic progressions. That means for every length k, there are k primes equally spaced in a row.</p>\n<img src=\"images/syn20-1.svg\" class=\"center-img\" alt=\"Prime progressions illustration\">\n<p>The theorem is striking because primes look irregular locally, yet still contain long patterns usually associated with dense sets.</p>\n<img src=\"images/syn20-2.svg\" class=\"center-img\" alt=\"Prime progressions detail illustration\">\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "post010320260818",
+  "timestamp": "2026-03-01T08:18:00.000Z",
+  "title": "{Syn} Distillation Teaches Small Models From Large Ones",
+  "tags": [
+    "ai papers",
+    "model compression",
+    "language models"
+  ],
+  "content": "<p>Knowledge distillation trains a smaller student model to imitate signals from a larger teacher model. The student may learn from soft probabilities, generated answers, or curated traces.</p>\n<img src=\"images/syn80-1.svg\" class=\"center-img\" alt=\"Distillation illustration\">\n<p>The goal is often to keep useful behavior while reducing latency, memory, and deployment cost.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

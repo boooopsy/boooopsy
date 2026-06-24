@@ -1,0 +1,12 @@
+{
+  "id": "post160320250705",
+  "timestamp": "2025-03-16T07:05:00.000Z",
+  "title": "{Syn} Twin Primes Keep Almost Touching",
+  "tags": [
+    "number theory",
+    "conjectures",
+    "primes"
+  ],
+  "content": "<p>Twin primes are prime pairs that differ by 2, such as 11 and 13. The twin prime conjecture says there are infinitely many such pairs, but that remains unproved.</p>\n<img src=\"images/syn19-1.svg\" class=\"center-img\" alt=\"p and p+2 illustration\">\n<p>A major 2013 breakthrough by Yitang Zhang proved that infinitely many prime pairs have some bounded gap, launching a wave of improvements on small prime gaps.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

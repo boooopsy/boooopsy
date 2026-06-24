@@ -1,0 +1,12 @@
+{
+  "id": "post080120260821",
+  "timestamp": "2026-01-08T08:21:00.000Z",
+  "title": "{Syn} AlphaProof Reached Silver-Level IMO Performance",
+  "tags": [
+    "ai papers",
+    "math ai",
+    "reasoning"
+  ],
+  "content": "<p>In 2024, Google DeepMind reported that AlphaProof and AlphaGeometry 2 solved International Mathematical Olympiad problems at a silver-medal level.</p>\n<img src=\"images/syn71-1.svg\" class=\"center-img\" alt=\"AlphaProof illustration\">\n<p>The milestone combined formal reasoning and geometry-focused systems, pointing toward AI that can work with proof-like structure rather than only natural-language answers.</p>\n<img src=\"images/syn71-2.svg\" class=\"center-img\" alt=\"AlphaProof detail illustration\">\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

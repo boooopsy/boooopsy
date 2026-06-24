@@ -1,0 +1,12 @@
+{
+  "id": "post310720251943",
+  "timestamp": "2025-07-31T19:43:00.000Z",
+  "title": "{Syn} Merkle Trees Hash the Shape of Data",
+  "tags": [
+    "algorithms",
+    "cryptography",
+    "data structures"
+  ],
+  "content": "<p>A Merkle tree hashes data in leaves and hashes pairs upward to a root. A short proof path can show that one item belongs to a committed dataset.</p>\n<img src=\"images/syn45-1.svg\" class=\"center-img\" alt=\"Merkle tree illustration\">\n<p>This structure appears in version control, blockchains, distributed storage, and transparency logs because it makes tampering visible.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

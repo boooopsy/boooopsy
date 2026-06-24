@@ -1,0 +1,12 @@
+{
+  "id": "post270420261241",
+  "timestamp": "2026-04-27T12:41:00.000Z",
+  "title": "{Syn} Topological Sorting Orders Dependencies",
+  "tags": [
+    "algorithms",
+    "graphs",
+    "dependency graphs"
+  ],
+  "content": "<p>Topological sorting orders the vertices of a directed acyclic graph so that every edge points forward in the order.</p>\n<img src=\"images/syn91-1.svg\" class=\"center-img\" alt=\"Topo sort illustration\">\n<p>Build systems, course prerequisites, and workflow schedulers all use this idea because dependencies need to be completed before the things that rely on them.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

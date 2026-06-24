@@ -1,0 +1,12 @@
+{
+  "id": "post210420260815",
+  "timestamp": "2026-04-21T08:15:00.000Z",
+  "title": "{Syn} Shor Algorithm Threatens Factoring-Based Cryptography",
+  "tags": [
+    "algorithms",
+    "quantum computing",
+    "cryptography"
+  ],
+  "content": "<p>Shor algorithm shows that a sufficiently large fault-tolerant quantum computer could factor integers in polynomial time.</p>\n<img src=\"images/syn89-1.svg\" class=\"center-img\" alt=\"Shor illustration\">\n<p>That is why post-quantum cryptography focuses on assumptions believed to resist both classical and quantum attacks.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

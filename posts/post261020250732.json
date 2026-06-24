@@ -1,0 +1,12 @@
+{
+  "id": "post261020250732",
+  "timestamp": "2025-10-26T07:32:00.000Z",
+  "title": "{Syn} AlphaFold2 Turned Protein Structure Into an AI Landmark",
+  "tags": [
+    "ai papers",
+    "science",
+    "biology"
+  ],
+  "content": "<p>AlphaFold2 achieved a major advance in predicting protein structures from amino-acid sequences, with results presented at CASP14 in 2020 and published afterward.</p>\n<img src=\"images/syn58-1.svg\" class=\"center-img\" alt=\"AlphaFold2 illustration\">\n<p>The work mattered because protein shape is closely tied to biological function, and experimental structure determination can be slow and expensive.</p>\n<img src=\"images/syn58-2.svg\" class=\"center-img\" alt=\"AlphaFold2 detail illustration\">\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

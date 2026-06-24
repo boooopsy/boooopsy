@@ -1,0 +1,12 @@
+{
+  "id": "post190420250723",
+  "timestamp": "2025-04-19T07:23:00.000Z",
+  "title": "{Syn} Happy Numbers Have a Surprisingly Grim Loop",
+  "tags": [
+    "math facts",
+    "recreational math",
+    "numbers"
+  ],
+  "content": "<p>A happy number eventually reaches 1 when replaced repeatedly by the sum of the squares of its digits. For example, 19 goes to 82, then 68, 100, and finally 1.</p>\n<img src=\"images/syn25-1.svg\" class=\"center-img\" alt=\"Happy numbers illustration\">\n<p>Unhappy starting values fall into a cycle that includes 4. The joke is that the process has only one truly cheerful fixed ending.</p>\n<blockquote>Why it matters: math facts keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

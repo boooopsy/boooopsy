@@ -1,0 +1,12 @@
+{
+  "id": "post141020250806",
+  "timestamp": "2025-10-14T08:06:00.000Z",
+  "title": "{Syn} AlphaGo Combined Search With Neural Networks",
+  "tags": [
+    "ai papers",
+    "reinforcement learning",
+    "games"
+  ],
+  "content": "<p>AlphaGo defeated Lee Sedol in 2016 by combining deep neural networks with Monte Carlo tree search. The match became a cultural marker for AI progress.</p>\n<img src=\"images/syn56-1.svg\" class=\"center-img\" alt=\"AlphaGo illustration\">\n<p>The system did not just memorize games; it evaluated positions and guided search through a vast decision space.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "post310720251330",
+  "timestamp": "2025-07-31T13:30:00.000Z",
+  "title": "{Syn} Paxos Is Small, Subtle, and Everywhere",
+  "tags": [
+    "algorithms",
+    "distributed systems",
+    "consensus"
+  ],
+  "content": "<p>Paxos is a family of consensus protocols for reaching agreement in an asynchronous distributed system with failures. The basic idea is compact, but the edge cases are famously subtle.</p>\n<img src=\"images/syn44-1.svg\" class=\"center-img\" alt=\"Paxos illustration\">\n<p>Many production systems use Paxos-like or Raft-like protocols because replicated state needs principled agreement, not just hopeful retries.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

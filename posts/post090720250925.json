@@ -1,0 +1,12 @@
+{
+  "id": "post090720250925",
+  "timestamp": "2025-07-09T09:25:00.000Z",
+  "title": "{Syn} Bloom Filters Trade Certainty for Tiny Memory",
+  "tags": [
+    "algorithms",
+    "data structures",
+    "probabilistic"
+  ],
+  "content": "<p>A Bloom filter can say that an item is definitely not present or possibly present. False positives are possible; false negatives are not, assuming no deletions in the basic structure.</p>\n<img src=\"images/syn39-1.svg\" class=\"center-img\" alt=\"Bloom filter illustration\">\n<p>That one-sided uncertainty is useful in caches, databases, and network systems where a compact precheck saves expensive lookups.</p>\n<img src=\"images/syn39-2.svg\" class=\"center-img\" alt=\"Bloom filter detail illustration\">\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "post061120250958",
+  "timestamp": "2025-11-06T09:58:00.000Z",
+  "title": "{Syn} CLIP Connected Images and Text at Web Scale",
+  "tags": [
+    "ai papers",
+    "multimodal ai",
+    "vision"
+  ],
+  "content": "<p>CLIP learned visual representations by matching images with their text captions. That contrastive setup made zero-shot image classification surprisingly effective.</p>\n<img src=\"images/syn60-1.svg\" class=\"center-img\" alt=\"CLIP illustration\">\n<p>The model also became an important building block for text-to-image systems and image retrieval because it embeds language and vision into a shared space.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

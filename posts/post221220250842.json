@@ -1,0 +1,12 @@
+{
+  "id": "post221220250842",
+  "timestamp": "2025-12-22T08:42:00.000Z",
+  "title": "{Syn} AlphaTensor Used Learning to Search for Matrix Algorithms",
+  "tags": [
+    "ai papers",
+    "algorithms",
+    "deepmind"
+  ],
+  "content": "<p>AlphaTensor framed matrix multiplication algorithm discovery as a game and used reinforcement learning to search for efficient tensor decompositions.</p>\n<img src=\"images/syn68-1.svg\" class=\"center-img\" alt=\"AlphaTensor illustration\">\n<p>The result was not that AI replaced proof, but that learned search could surface useful algorithmic candidates in a highly structured mathematical space.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

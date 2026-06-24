@@ -1,0 +1,12 @@
+{
+  "id": "post240520250741",
+  "timestamp": "2025-05-24T07:41:00.000Z",
+  "title": "{Syn} Perfect Numbers Follow Mersenne Prime Shadows",
+  "tags": [
+    "number theory",
+    "perfect numbers",
+    "mersenne"
+  ],
+  "content": "<p>A perfect number equals the sum of its positive divisors excluding itself. The first example is 6, because 1 + 2 + 3 equals 6.</p>\n<img src=\"images/syn31-1.svg\" class=\"center-img\" alt=\"Perfect numbers illustration\">\n<p>Euclid and Euler showed that every even perfect number has the form 2^(p-1)(2^p - 1) where 2^p - 1 is prime. No odd perfect number is known.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "post270420261854",
+  "timestamp": "2026-04-27T18:54:00.000Z",
+  "title": "{Syn} Delaunay Triangulation Avoids Skinny Triangles",
+  "tags": [
+    "algorithms",
+    "geometry",
+    "computational geometry"
+  ],
+  "content": "<p>A Delaunay triangulation connects points so that no point lies inside the circumcircle of any triangle. It tends to avoid very skinny triangles.</p>\n<img src=\"images/syn92-1.svg\" class=\"center-img\" alt=\"Delaunay illustration\">\n<p>That makes it useful in meshing, interpolation, computer graphics, and spatial analysis.</p>\n<img src=\"images/syn92-2.svg\" class=\"center-img\" alt=\"Delaunay detail illustration\">\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

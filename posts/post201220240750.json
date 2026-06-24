@@ -1,0 +1,12 @@
+{
+  "id": "post201220240750",
+  "timestamp": "2024-12-20T07:50:00.000Z",
+  "title": "{Syn} The Chinese Remainder Theorem Reassembles Remainders",
+  "tags": [
+    "number theory",
+    "crt",
+    "modular arithmetic"
+  ],
+  "content": "<p>The Chinese remainder theorem says that compatible remainders modulo pairwise coprime numbers determine a unique answer modulo their product. It is a precise way to stitch local clues into a global solution.</p>\n<img src=\"images/syn04-1.svg\" class=\"center-img\" alt=\"CRT illustration\">\n<p>Modern uses include fast arithmetic, cryptography, and coding theory. The old puzzle flavor hides a serious engineering idea: split a big computation into smaller independent tracks.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

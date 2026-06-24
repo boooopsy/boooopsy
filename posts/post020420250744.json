@@ -1,0 +1,12 @@
+{
+  "id": "post020420250744",
+  "timestamp": "2025-04-02T07:44:00.000Z",
+  "title": "{Syn} Fibonacci Numbers Repeat Modulo m",
+  "tags": [
+    "number theory",
+    "fibonacci",
+    "patterns"
+  ],
+  "content": "<p>The Fibonacci sequence modulo any positive integer m is periodic. These repeat lengths are called Pisano periods.</p>\n<img src=\"images/syn22-1.svg\" class=\"center-img\" alt=\"Pisano periods illustration\">\n<p>The reason is finite-state logic: each next term depends only on the previous two residues, so eventually a pair repeats and the sequence cycles.</p>\n<img src=\"images/syn22-2.svg\" class=\"center-img\" alt=\"Pisano periods detail illustration\">\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

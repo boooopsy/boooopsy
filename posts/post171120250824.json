@@ -1,0 +1,12 @@
+{
+  "id": "post171120250824",
+  "timestamp": "2025-11-17T08:24:00.000Z",
+  "title": "{Syn} RAG Lets Language Models Look Things Up",
+  "tags": [
+    "ai papers",
+    "retrieval",
+    "language models"
+  ],
+  "content": "<p>Retrieval-augmented generation combines a language model with an external retrieval step. Instead of relying only on parameters, the model can condition on retrieved documents.</p>\n<img src=\"images/syn62-1.svg\" class=\"center-img\" alt=\"RAG illustration\">\n<p>RAG is useful when answers depend on private, recent, or detailed knowledge that should be grounded in a source collection.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

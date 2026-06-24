@@ -1,0 +1,12 @@
+{
+  "id": "post051220251416",
+  "timestamp": "2025-12-05T14:16:00.000Z",
+  "title": "{Syn} Chain-of-Thought Prompting Exposed Reasoning Traces",
+  "tags": [
+    "ai papers",
+    "prompting",
+    "reasoning"
+  ],
+  "content": "<p>Chain-of-thought prompting showed that asking large language models to produce intermediate reasoning steps can improve performance on multi-step tasks.</p>\n<img src=\"images/syn66-1.svg\" class=\"center-img\" alt=\"CoT illustration\">\n<p>The technique also raised evaluation questions, because a fluent explanation is not automatically a faithful explanation of the model internal process.</p>\n<blockquote>Why it matters: ai papers keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

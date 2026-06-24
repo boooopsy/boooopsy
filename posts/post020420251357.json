@@ -1,0 +1,12 @@
+{
+  "id": "post020420251357",
+  "timestamp": "2025-04-02T13:57:00.000Z",
+  "title": "{Syn} Wilson Theorem Turns Factorials Into Primality Clues",
+  "tags": [
+    "number theory",
+    "primality",
+    "factorials"
+  ],
+  "content": "<p>Wilson theorem says that n is prime exactly when (n - 1)! is congruent to -1 modulo n. It is a beautiful characterization of primality.</p>\n<img src=\"images/syn23-1.svg\" class=\"center-img\" alt=\"(p-1)! illustration\">\n<p>As a test it is usually impractical, because factorials get huge quickly. As a theorem it neatly captures how residues pair with their inverses modulo a prime.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "post100620250720",
+  "timestamp": "2025-06-10T07:20:00.000Z",
+  "title": "{Syn} Karatsuba Multiplies by Doing Less Multiplication",
+  "tags": [
+    "algorithms",
+    "multiplication",
+    "breakthroughs"
+  ],
+  "content": "<p>Karatsuba multiplication reduces the number of recursive multiplications needed for large integers. Instead of four half-size products, it uses three plus additions and subtractions.</p>\n<img src=\"images/syn34-1.svg\" class=\"center-img\" alt=\"Karatsuba illustration\">\n<p>That tradeoff beats the grade-school method asymptotically and is one of the clearest examples of divide and conquer paying off.</p>\n<blockquote>Why it matters: algorithms keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

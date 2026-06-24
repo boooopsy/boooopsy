@@ -1,0 +1,12 @@
+{
+  "id": "post180520250928",
+  "timestamp": "2025-05-18T09:28:00.000Z",
+  "title": "{Syn} The Ulam Spiral Makes Primes Look Like Constellations",
+  "tags": [
+    "number theory",
+    "primes",
+    "visual math"
+  ],
+  "content": "<p>Write positive integers in a square spiral and mark the primes. Diagonal streaks appear because many quadratic polynomials produce prime-rich runs.</p>\n<img src=\"images/syn30-1.svg\" class=\"center-img\" alt=\"Ulam spiral illustration\">\n<p>The Ulam spiral is not a proof machine, but it is a wonderful reminder that visual experiments can expose arithmetic texture.</p>\n<blockquote>Why it matters: number theory keeps producing ideas that are simple enough to state and strong enough to build with.</blockquote>",
+  "likes": []
+}

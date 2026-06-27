@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solana Memecoin - Parabolic Chart Simulator</title>
+    <style>
+        :root {
+            --bg-color: #131722;
+            --panel-bg: #1e222d;
+            --text-color: #d1d4dc;
+            --grid-color: #2a2e39;
+            --green: #00e676;
+            --red: #ff5252;
+            --grey: #b2b5be;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #chart-container {
+            flex-grow: 1;
+            position: relative;
+            width: 100%;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #controls {
+            background-color: var(--panel-bg);
+            padding: 15px 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            border-top: 1px solid var(--grid-color);
+        }
+
+        input {
+            background-color: var(--bg-color);
+            border: 1px solid var(--grid-color);
+            color: var(--text-color);
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--green);
+        }
+
+        button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .btn-buy {
+            background-color: rgba(0, 230, 118, 0.2);
+            color: var(--green);
+            border: 1px solid var(--green);
+        }
+
+        .btn-sell {
+            background-color: rgba(255, 82, 82, 0.2);
+            color: var(--red);
+            border: 1px solid var(--red);
+        }
+
+        .btn-reset {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--grid-color);
+            margin-left: auto;
+        }
+
+        .stats {
+            margin-left: 20px;
+            font-family: monospace;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="chart-container">
+        <canvas id="chartCanvas"></canvas>
+    </div>
+
+    <div id="controls">
+        <label>Amount:</label>
+        <input type="number" id="tradeAmount" value="15" step="5">
+        <button class="btn-buy" id="btnBuy">Execute Buy</button>
+        <button class="btn-sell" id="btnSell">Execute Sell</button>
+        
+        <div class="stats">
+            Live Price: $<span id="priceDisplay">100.00</span>
+        </div>
+
+        <button class="btn-reset" id="btnReset">Reset Chart</button>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('chartCanvas');
+        const ctx = canvas.getContext('2d');
+        const priceDisplay = document.getElementById('priceDisplay');
+        const tradeAmountInput = document.getElementById('tradeAmount');
+
+        let width, height;
+        let particles = [];
+        let priceData = [];
+        let currentPrice = 100;
+        let maxDataPoints = 100;
+        const futureSteps = 35; // How many steps into the future the parabola extends
+
+        // Colors
+        const COLOR_GREEN = '0, 230, 118';
+        const COLOR_GREY = '178, 181, 190';
+        const COLOR_GRID = '#2a2e39';
+
+        // Initialize Canvas Size
+        function resize() {
+            width = canvas.width = canvas.parentElement.clientWidth;
+            height = canvas.height = canvas.parentElement.clientHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        // Particle Class
+        class Particle {
+            constructor(x, y, color, isBurst = false, isTrail = false) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                
+                if (isBurst) {
+                    const angle = Math.random() * Math.PI * 2;
+                    const speed = Math.random() * 8 + 2;
+                    this.vx = Math.cos(angle) * speed;
+                    this.vy = Math.sin(angle) * speed;
+                    this.life = Math.random() * 0.8 + 0.4;
+                    this.size = Math.random() * 2.5 + 1;
+                } else if (isTrail) {
+                    this.vx = (Math.random() - 0.5) * 0.5;
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                    this.life = Math.random() * 0.6 + 0.2;
+                    this.size = Math.random() * 1.5 + 0.5;
+                } else {
+                    // Aura
+                    this.vx = (Math.random() - 0.5) * 1.5;
+                    this.vy = (Math.random() - 0.5) * 1.5;
+                    this.life = Math.random() * 0.5 + 0.5;
+                    this.size = Math.random() * 3 + 1;
+                }
+                
+                this.maxLife = this.life;
+                this.decay = Math.random() * 0.02 + 0.015;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.life -= this.decay;
+                this.vx *= 0.95; // Friction
+                this.vy *= 0.95;
+            }
+
+            draw() {
+                const alpha = Math.max(0, this.life / this.maxLife);
+                ctx.fillStyle = `rgba(${this.color}, ${alpha})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Setup Initial Data
+        function reset() {
+            priceData = [];
+            currentPrice = 100;
+            particles = [];
+            for(let i = 0; i < 20; i++) {
+                priceData.push(currentPrice + (Math.random() * 4 - 2));
+            }
+            updateDisplay();
+        }
+
+        // Coordinate Mapping with Future Projection Capacity
+        function getCoords(index, value, minPrice, maxPrice, totalVisibleSteps) {
+            const paddingX = 50;
+            const paddingY = 100;
+            
+            // X progresses based on the total timeline (including future projection)
+            const x = paddingX + (index / (totalVisibleSteps - 1)) * (width - paddingX * 2);
+            
+            // Y mapped to price range
+            const yRange = maxPrice - minPrice || 1;
+            const y = height - paddingY - ((value - minPrice) / yRange) * (height - paddingY * 2);
+            
+            return { x, y };
+        }
+
+        function triggerBurst(x, y) {
+            for (let i = 0; i < 60; i++) {
+                particles.push(new Particle(x, y, COLOR_GREEN, true, false));
+            }
+        }
+
+        // Main Animation Loop
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            // Draw Grid
+            ctx.strokeStyle = COLOR_GRID;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            for (let i = 0; i < width; i += 50) { ctx.moveTo(i, 0); ctx.lineTo(i, height); }
+            for (let i = 0; i < height; i += 50) { ctx.moveTo(0, i); ctx.lineTo(width, i); }
+            ctx.stroke();
+
+            if (priceData.length === 0) return requestAnimationFrame(animate);
+
+            const lastIndex = priceData.length - 1;
+            const startY = priceData[0];
+            const currentY = priceData[lastIndex];
+            
+            // Calculate Parabola Coefficient (A)
+            // Formula: y = A * x^2 + startY  -->  A = (currentY - startY) / (lastIndex^2)
+            let parabolaA = 0;
+            if (lastIndex > 0) {
+                parabolaA = (currentY - startY) / Math.pow(lastIndex, 2);
+            }
+
+            function getParabolaValue(xIndex) {
+                return parabolaA * Math.pow(xIndex, 2) + startY;
+            }
+
+            // Dynamic Scaling: Account for historical prices AND future parabolic prices
+            let minPrice = Math.min(...priceData);
+            let maxPrice = Math.max(...priceData);
+            
+            // Calculate the extreme point of the future projection to adjust canvas scale
+            const projectedFutureIndex = lastIndex + futureSteps;
+            const extremeFutureValue = getParabolaValue(projectedFutureIndex);
+            minPrice = Math.min(minPrice, extremeFutureValue) - 10;
+            maxPrice = Math.max(maxPrice, extremeFutureValue) + 20;
+
+            const totalVisibleSteps = Math.max(maxDataPoints, priceData.length + futureSteps);
+
+            // --- DRAW PARABOLA (Start to Future) ---
+            ctx.beginPath();
+            for (let i = 0; i <= projectedFutureIndex; i++) {
+                const val = getParabolaValue(i);
+                const coord = getCoords(i, val, minPrice, maxPrice, totalVisibleSteps);
+                
+                if (i === 0) ctx.moveTo(coord.x, coord.y);
+                else ctx.lineTo(coord.x, coord.y);
+
+                // Emit Grey Trail Particles along the mathematical line
+                if (Math.random() < 0.1) {
+                    particles.push(new Particle(coord.x, coord.y, COLOR_GREY, false, true));
+                }
+            }
+            
+            // Styling the Parabola
+            ctx.strokeStyle = `rgba(${COLOR_GREY}, 0.6)`;
+            ctx.lineWidth = 2;
+            if(parabolaA > 0) {
+                ctx.setLineDash([5, 5]); // Dashed line to signify projection
+            }
+            ctx.stroke();
+            ctx.setLineDash([]); // Reset dash for green line
+
+            // --- DRAW GREEN PRICE LINE ---
+            ctx.beginPath();
+            let lastCoord = {x: 0, y: 0};
+            for (let i = 0; i < priceData.length; i++) {
+                const coord = getCoords(i, priceData[i], minPrice, maxPrice, totalVisibleSteps);
+                if (i === 0) ctx.moveTo(coord.x, coord.y);
+                else ctx.lineTo(coord.x, coord.y);
+                lastCoord = coord;
+            }
+            ctx.strokeStyle = `rgb(${COLOR_GREEN})`;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Emit Green Aura at the live price cursor
+            particles.push(new Particle(lastCoord.x, lastCoord.y, COLOR_GREEN, false, false));
+            particles.push(new Particle(lastCoord.x, lastCoord.y, COLOR_GREEN, false, false));
+
+            // Draw Head Cursor
+            ctx.beginPath();
+            ctx.arc(lastCoord.x, lastCoord.y, 4, 0, Math.PI * 2);
+            ctx.fillStyle = '#fff';
+            ctx.fill();
+
+            // --- UPDATE & DRAW PARTICLES ---
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                p.update();
+                p.draw();
+                if (p.life <= 0) particles.splice(i, 1);
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        // Transactions
+        function updateDisplay() {
+            priceDisplay.innerText = currentPrice.toFixed(2);
+            if (priceData.length > maxDataPoints - futureSteps) {
+                priceData.shift(); // Keep timeline manageable
+            }
+        }
+
+        document.getElementById('btnBuy').addEventListener('click', () => {
+            const amt = parseFloat(tradeAmountInput.value) || 10;
+            currentPrice += amt;
+            priceData.push(currentPrice);
+            
+            // We must recalculate scale to fire the burst at the correct new screen position
+            const lastIndex = priceData.length - 1;
+            const startY = priceData[0];
+            const A = (currentPrice - startY) / Math.pow(lastIndex, 2);
+            const futureVal = A * Math.pow(lastIndex + futureSteps, 2) + startY;
+            
+            let min = Math.min(...priceData, futureVal) - 10;
+            let max = Math.max(...priceData, futureVal) + 20;
+            const steps = Math.max(maxDataPoints, priceData.length + futureSteps);
+            
+            const coord = getCoords(lastIndex, currentPrice, min, max, steps);
+            triggerBurst(coord.x, coord.y);
+            
+            updateDisplay();
+        });
+
+        document.getElementById('btnSell').addEventListener('click', () => {
+            const amt = parseFloat(tradeAmountInput.value) || 10;
+            currentPrice -= amt;
+            if(currentPrice < 1) currentPrice = 1;
+            priceData.push(currentPrice);
+            updateDisplay();
+        });
+
+        document.getElementById('btnReset').addEventListener('click', reset);
+
+        // Start
+        reset();
+        animate();
+    </script>
+</body>
+</html>
